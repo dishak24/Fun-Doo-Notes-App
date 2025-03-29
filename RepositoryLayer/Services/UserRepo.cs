@@ -101,5 +101,17 @@ namespace RepositoryLayer.Services
 
         }
 
+
+        //Forgot password method.
+        public ForgotPasswordModel ForgotPassword(string email)
+        {
+            var User = context.Users.ToList().Find(u => u.Email == email);
+            ForgotPasswordModel forgotPassword = new ForgotPasswordModel();
+            forgotPassword.UserId = User.UserId;
+            forgotPassword.Email = User.Email;
+            forgotPassword.Token = GenerateToken(User.Email, User.UserId);
+            return forgotPassword;
+        }
+
     }
 }

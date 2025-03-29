@@ -2,6 +2,9 @@
 using ManagerLayer.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using RepositoryLayer.Entity;
+using System.Threading.Tasks;
+using System;
+using MassTransit;
 
 namespace FunDooNotesApp.Controllers
 {
@@ -11,9 +14,12 @@ namespace FunDooNotesApp.Controllers
     {
         private readonly IUserManager userManager;
 
-        public UsersController(IUserManager userManager)
+        private readonly IBus bus;
+
+        public UsersController(IUserManager userManager, IBus bus)
         {
             this.userManager = userManager;
+            this.bus = bus;
         }
 
         [HttpPost]
@@ -75,6 +81,47 @@ namespace FunDooNotesApp.Controllers
 
             });
 
+        }
+
+        //Forgot password API
+        [HttpPost]
+        [Route("ForgotPassword")]
+        public async Task<IActionResult> ForgotPassword(string email)
+        {
+            try
+            {
+                if (userManager.CheckEmailExist(email))
+                {
+                    Send send = new Send();
+                    ForgotPasswordModel forgotPasswordModel = userManager.ForgotPassword(email);
+                    send.SendingMail(forgotPasswordModel.Email, forgotPasswordModel.Token);
+                    Uri uri = new Uri("rabbitmq://localhost/FunDooNotes_EmailQueue");
+                    var endPoint = await bus.GetSendEndpoint(uri);
+
+                    await endPoint.Send(forgotPasswordModel);
+
+                    return Ok(new ResponseModel<string>
+                    {
+                        Success = true,
+                        Message = "Main sent Successfull !"
+
+                    });
+                }
+                else
+                {
+                    return BadRequest(new ResponseModel<string>
+                    {
+                        Success = true,
+                        Message = "Sending email failed !!!!!"
+
+                    });
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
     }
