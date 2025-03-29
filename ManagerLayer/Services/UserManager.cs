@@ -30,5 +30,10 @@ namespace ManagerLayer.Services
         {
             return userRepo.CheckEmailExist(email);
         }
+
+        public string Login(LoginModel loginModel)
+        {
+            return userRepo.Login(loginModel);
+        }
     }
 }

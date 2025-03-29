@@ -13,5 +13,8 @@ namespace ManagerLayer.Interfaces
 
         //Checking email exist or not. Duplicate email not allowed
         public bool CheckEmailExist(string email);
+
+        //Login User
+        public string Login(LoginModel loginModel);
     }
 }

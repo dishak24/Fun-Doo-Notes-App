@@ -11,3 +11,7 @@ E:\BL\Training\Project\Backend\FunDooNotesApp\RepositoryLayer\obj\Debug\netcorea
 E:\BL\Training\Project\Backend\FunDooNotesApp\RepositoryLayer\obj\Debug\netcoreapp3.1\RepositoryLayer.dll
 E:\BL\Training\Project\Backend\FunDooNotesApp\RepositoryLayer\obj\Debug\netcoreapp3.1\RepositoryLayer.pdb
 E:\BL\Training\Project\Backend\FunDooNotesApp\RepositoryLayer\obj\Debug\netcoreapp3.1\RepositoryLayer.genruntimeconfig.cache
+E:\BL\Training\Project\Backend\FunDooNotesApp\RepositoryLayer\bin\Debug\netcoreapp3.1\CommonLayer.dll
+E:\BL\Training\Project\Backend\FunDooNotesApp\RepositoryLayer\bin\Debug\netcoreapp3.1\CommonLayer.pdb
+E:\BL\Training\Project\Backend\FunDooNotesApp\RepositoryLayer\obj\Debug\netcoreapp3.1\RepositoryLayer.sourcelink.json
+E:\BL\Training\Project\Backend\FunDooNotesApp\RepositoryLayer\obj\Debug\netcoreapp3.1\Reposito.A0A61804.Up2Date

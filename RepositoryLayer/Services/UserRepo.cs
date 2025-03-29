@@ -1,10 +1,14 @@
 ﻿using CommonLayer.Model;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using RepositoryLayer.Context;
 using RepositoryLayer.Entity;
 using RepositoryLayer.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 
 namespace RepositoryLayer.Services
@@ -12,9 +16,11 @@ namespace RepositoryLayer.Services
     public class UserRepo: IUserRepo
     {
         private readonly FundooDBContext context;
-        public UserRepo(FundooDBContext context)
+        private readonly IConfiguration configuration;
+        public UserRepo(FundooDBContext context, IConfiguration configuration)
         {
             this.context = context;
+            this.configuration = configuration;
         }
 
         //Register User
@@ -59,5 +65,41 @@ namespace RepositoryLayer.Services
             }
             return true;
         }
+
+        //User Login
+        public string Login(LoginModel loginModel)
+        {
+            var checkUser = this.context.Users.FirstOrDefault(u => u.Email == loginModel.Email && u.Password == EncodePasswordToBase64(loginModel.Password));
+            if (checkUser != null)
+            {
+                //return user;
+                var token = GenerateToken(checkUser.Email, checkUser.UserId);
+                return token;
+            }
+            return null;
+        }
+
+
+        // To generate token
+        private string GenerateToken(string emailId, int userId)
+        {
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]));
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            var claims = new[]
+            {
+                new Claim("EmailId", emailId),
+                new Claim("UserId", userId.ToString())
+            };
+            var token = new JwtSecurityToken(configuration["Jwt:Issuer"],
+                configuration["Jwt:Audience"],
+                claims,
+                expires: DateTime.Now.AddHours(2),
+                signingCredentials: credentials);
+
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
+
+        }
+
     }
 }

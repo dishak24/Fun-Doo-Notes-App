@@ -1,0 +1,10 @@
+E:\BL\Training\Project\Backend\FunDooNotesApp\CommonLayer\bin\Debug\netcoreapp3.1\CommonLayer.deps.json
+E:\BL\Training\Project\Backend\FunDooNotesApp\CommonLayer\bin\Debug\netcoreapp3.1\CommonLayer.dll
+E:\BL\Training\Project\Backend\FunDooNotesApp\CommonLayer\bin\Debug\netcoreapp3.1\CommonLayer.pdb
+E:\BL\Training\Project\Backend\FunDooNotesApp\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.GeneratedMSBuildEditorConfig.editorconfig
+E:\BL\Training\Project\Backend\FunDooNotesApp\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.AssemblyInfoInputs.cache
+E:\BL\Training\Project\Backend\FunDooNotesApp\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.AssemblyInfo.cs
+E:\BL\Training\Project\Backend\FunDooNotesApp\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.csproj.CoreCompileInputs.cache
+E:\BL\Training\Project\Backend\FunDooNotesApp\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.sourcelink.json
+E:\BL\Training\Project\Backend\FunDooNotesApp\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.dll
+E:\BL\Training\Project\Backend\FunDooNotesApp\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.pdb

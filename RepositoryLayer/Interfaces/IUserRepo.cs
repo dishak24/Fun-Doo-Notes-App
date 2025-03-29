@@ -14,5 +14,8 @@ namespace RepositoryLayer.Interfaces
 
         //for duplicate email checking
         public bool CheckEmailExist(string email);
+
+        //for login user
+        public string Login(LoginModel loginModel);
     }
 }

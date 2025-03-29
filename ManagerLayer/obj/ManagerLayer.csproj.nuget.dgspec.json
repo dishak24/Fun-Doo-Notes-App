@@ -171,9 +171,6 @@
             "projectReferences": {
               "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\CommonLayer\\CommonLayer.csproj": {
                 "projectPath": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\CommonLayer\\CommonLayer.csproj"
-              },
-              "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\ManagerLayer\\ManagerLayer.csproj": {
-                "projectPath": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\ManagerLayer\\ManagerLayer.csproj"
               }
             }
           }
@@ -194,6 +191,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.0, )"

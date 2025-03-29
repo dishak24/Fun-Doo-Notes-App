@@ -50,5 +50,32 @@ namespace FunDooNotesApp.Controllers
                 });
             }
         }
+
+        //login api
+        [HttpPost]
+        [Route("login")]
+        public IActionResult Login(LoginModel loginModel)
+        {
+            var result = userManager.Login(loginModel);
+            if (result != null)
+            {
+                return Ok(new ResponseModel<string>
+                {
+                    Success = true,
+                    Message = "Login Successfull !",
+                    Data = result
+
+                });
+            }
+            return BadRequest(new ResponseModel<string>
+            {
+                Success = false,
+                Message = "Login failed !!!!",
+                Data = result
+
+            });
+
+        }
+
     }
 }
