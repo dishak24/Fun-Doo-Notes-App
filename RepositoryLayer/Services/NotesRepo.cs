@@ -4,6 +4,7 @@ using RepositoryLayer.Entity;
 using RepositoryLayer.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace RepositoryLayer.Services
@@ -32,6 +33,12 @@ namespace RepositoryLayer.Services
             context.SaveChanges();
             return notes;
         }
-    
+
+        //To get all notes
+        public List<NotesEntity> GetAllNotes()
+        {
+            List<NotesEntity> allNotes = context.Notes.ToList();
+            return allNotes;
+        }
     }
 }

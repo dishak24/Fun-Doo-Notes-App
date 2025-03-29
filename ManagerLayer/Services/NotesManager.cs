@@ -22,7 +22,10 @@ namespace ManagerLayer.Services
         {
             return notesRepo.CreateNote(userId, notesModel);
         }
-    
 
+        public List<NotesEntity> GetAllNotes()
+        {
+            return notesRepo.GetAllNotes();
+        }
     }
 }

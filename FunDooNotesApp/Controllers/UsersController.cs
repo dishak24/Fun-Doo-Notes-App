@@ -104,7 +104,7 @@ namespace FunDooNotesApp.Controllers
                     return Ok(new ResponseModel<string>
                     {
                         Success = true,
-                        Message = "Main sent Successfull !"
+                        Message = "Mail sent Successfull !"
 
                     });
                 }

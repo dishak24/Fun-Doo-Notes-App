@@ -2,7 +2,9 @@
 using ManagerLayer.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using RepositoryLayer.Entity;
+using RepositoryLayer.Migrations;
 using System;
+using System.Collections.Generic;
 
 namespace FunDooNotesApp.Controllers
 {
@@ -53,5 +55,38 @@ namespace FunDooNotesApp.Controllers
                 }
             }
 
+        //Get all Notes API
+        [HttpGet]
+        [Route("GetAllNotes")]
+        public IActionResult GetAllNotes()
+        {
+            try
+            {
+                List<NotesEntity> notes = notesManager.GetAllNotes();
+                if (notes == null)
+                {
+                    return BadRequest(new ResponseModel<string>
+                    {
+                        Success = true,
+                        Message = "Empty Notes !!!!!"
+
+                    });
+                }
+                else
+                {
+                    return Ok(new ResponseModel <List<NotesEntity>>
+                    {
+                        Success = true,
+                        Message = "All Notes : ",
+                        Data = notes
+
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }
