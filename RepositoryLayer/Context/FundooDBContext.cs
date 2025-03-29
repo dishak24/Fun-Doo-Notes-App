@@ -14,5 +14,8 @@ namespace RepositoryLayer.Context
 
         //For table creation
         public DbSet<UserEntity> Users { get; set; }
+
+        //Create Table Notes
+        public DbSet<NotesEntity> Notes { get; set; }
     }
 }
