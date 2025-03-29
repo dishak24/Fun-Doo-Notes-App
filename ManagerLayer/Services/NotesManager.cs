@@ -23,9 +23,22 @@ namespace ManagerLayer.Services
             return notesRepo.CreateNote(userId, notesModel);
         }
 
+        //Get all notes
         public List<NotesEntity> GetAllNotes()
         {
             return notesRepo.GetAllNotes();
+        }
+
+        //Fetch Notes using title
+        public List<NotesEntity> GetNotesByTitle(string title)
+        {
+            return notesRepo.GetNotesByTitle(title);
+        }
+
+        //Return Count of notes a user has
+        public int CountAllNotes()
+        {
+            return notesRepo.CountAllNotes();
         }
     }
 }

@@ -40,5 +40,18 @@ namespace RepositoryLayer.Services
             List<NotesEntity> allNotes = context.Notes.ToList();
             return allNotes;
         }
+
+        //Fetch Notes using title
+        public List<NotesEntity> GetNotesByTitle(string title)
+        {
+            List<NotesEntity> notes = context.Notes.Where( n => n.Title == title).ToList();
+            return notes;
+        }
+
+        //Return Count of notes a user has
+        public int CountAllNotes()
+        {
+            return context.Notes.Count();
+        }
     }
 }

@@ -88,5 +88,74 @@ namespace FunDooNotesApp.Controllers
                 throw e;
             }
         }
+
+        //Fetch Notes using title
+        [HttpGet]
+        [Route("GetNotesByTitle/{title}")]
+        public IActionResult GetNotesByTitle(string title)
+        {
+            try
+            {
+                List<NotesEntity> notes = notesManager.GetNotesByTitle(title);
+                if (notes == null)
+                {
+                    return BadRequest(new ResponseModel<string>
+                    {
+                        Success = true,
+                        Message = "Empty Notes !!!!!"
+
+                    });
+                }
+                else
+                {
+                    return Ok(new ResponseModel<List<NotesEntity>>                  {
+                        Success = true,
+                        Message = "Getting Notes successfull. ",
+                        Data = notes
+
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        //Return Count of notes a user has
+        [HttpGet]
+        [Route("CountAllNotes")]
+        public IActionResult CountAllNotes()
+        {
+            try
+            {
+                var count = notesManager.CountAllNotes();
+                if (count == null)
+                {
+                    return BadRequest(new ResponseModel<int>
+                    {
+                        Success = true,
+                        Message = "Empty Notes !!!!!",
+                        Data = count
+
+                    });
+                }
+                else
+                {
+                    return Ok(new ResponseModel<int>
+                    {
+                        Success = true,
+                        Message = "Getting Notes Count successfull. ",
+                        Data = count
+
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
     }
 }

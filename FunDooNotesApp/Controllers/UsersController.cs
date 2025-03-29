@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System;
 using MassTransit;
 using Microsoft.AspNetCore.Authorization;
+using System.Collections.Generic;
+using RepositoryLayer.Migrations;
 
 namespace FunDooNotesApp.Controllers
 {
@@ -60,7 +62,7 @@ namespace FunDooNotesApp.Controllers
 
         //login api
         [HttpPost]
-        [Route("login")]
+        [Route("Login")]
         public IActionResult Login(LoginModel loginModel)
         {
             var result = userManager.Login(loginModel);
@@ -159,5 +161,340 @@ namespace FunDooNotesApp.Controllers
             }
         }
 
+
+        //To get all Users
+        [HttpGet]
+        [Route("AllUsers")]
+        public IActionResult GetAllUsers()
+        {
+            try
+            {
+                List<UserEntity> userList = userManager.GetAllUsers();
+                if ( userList == null)
+                {
+                    return BadRequest(new ResponseModel<string>
+                    {
+                        Success = true,
+                        Message = " No User available in Database !!!!!"
+
+                    });
+                }
+                else
+                {
+                    return Ok(new ResponseModel<List<UserEntity>>
+                    {
+                        Success = true,
+                        Message = "All Users :",
+                        Data = userList
+
+                    });
+                }
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+        }
+
+        //Find a user by ID
+        [HttpGet]
+        [Route("GetUserById/{userId}")]
+        public IActionResult GetUserById(int userId)
+        {
+            try
+            {
+                var user = userManager.GetUserById(userId);
+
+                if (user == null)
+                {
+                    return BadRequest(new ResponseModel<string>
+                    {
+                        Success = true,
+                        Message = " This UserId does not exist !!!!!"
+
+                    });
+                }
+                else
+                {
+                    return Ok(new ResponseModel<UserEntity>
+                    {
+                        Success = true,
+                        Message = "Getting Users Data Successfully. :",
+                        Data = user
+
+                    });
+                }
+
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+        }
+
+        //Get users whose name starts with 'A'
+        [HttpGet]
+        [Route("GetNameStarsWith/{letter}")]
+        public IActionResult GetUsersNameStartsWithLetter(string letter)
+        {
+            try
+            {
+                List<UserEntity> users = userManager.GetUsersNameStartsWithLetter(letter);
+
+                if (users == null)
+                {
+                    return BadRequest(new ResponseModel<string>
+                    {
+                        Success = true,
+                        Message = " Such Users not exist !!!!!"
+
+                    });
+                }
+                else
+                {
+                    return Ok(new ResponseModel<List<UserEntity>>
+                    {
+                        Success = true,
+                        Message = "Getting Users Data Successfully. ",
+                        Data = users
+
+                    });
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        //Count the total number of users
+        [HttpGet]
+        [Route("GetUserCount")]
+        public IActionResult CountUsers()
+        {
+            try
+            {
+                var count = userManager.CountUsers();
+
+                if (count == null)
+                {
+                    return BadRequest(new ResponseModel<int>
+                    {
+                        Success = true,
+                        Message = " Empty User Database !!!!!! ",
+                        Data = count
+
+                    });
+                }
+                else
+                {
+                    return Ok(new ResponseModel<int>
+                    {
+                        Success = true,
+                        Message = "Getting Users Count Successfully. ",
+                        Data = count
+
+                    });
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+
+        //Get users ordered by name (ascending)
+        [HttpGet]
+        [Route("GetUsersOrderByNames_ASC")]
+        public IActionResult GetUsersByNamesASC()
+        {
+            List<UserEntity> users = userManager.GetUsersByNamesASC();
+            try
+            {
+                if (users == null)
+                {
+                    return BadRequest(new ResponseModel<List<UserEntity>>
+                    {
+                        Success = true,
+                        Message = " Empty Users !!!!!",
+                        Data = users
+
+                    });
+                }
+                else
+                {
+                    return Ok(new ResponseModel<List<UserEntity>>
+                    {
+                        Success = true,
+                        Message = "Getting Users Data Successfully in Ascending Order. ",
+                        Data = users
+
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+        }
+
+
+        //Get users ordered by name (descending)
+        [HttpGet]
+        [Route("GetUsersOrderByNames_DESC")]
+        public IActionResult GetUsersByNamesDESC()
+        {
+            List<UserEntity> users = userManager.GetUsersByNamesDESC();
+            try
+            {
+                if (users == null)
+                {
+                    return BadRequest(new ResponseModel<List<UserEntity>>
+                    {
+                        Success = true,
+                        Message = " Empty Users !!!!!",
+                        Data = users
+
+                    });
+                }
+                else
+                {
+                    return Ok(new ResponseModel<List<UserEntity>>
+                    {
+                        Success = true,
+                        Message = "Getting Users Data Successfully in Ascending Order. ",
+                        Data = users
+
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+        }
+
+        //Get the average age of users
+        [HttpGet]
+        [Route("GetUsersAverageAge")]
+       
+        public IActionResult GetUsersAverageAge()
+        {
+            try
+            {
+                var avgAge = userManager.GetUsersAverageAge();
+
+                if (avgAge == null)
+                {
+                    return BadRequest(new ResponseModel<double>
+                    {
+                        Success = true,
+                        Message = " No Data to Calculate Average !!!!!! ",
+                        Data = avgAge
+
+                    });
+                }
+                else
+                {
+                    return Ok(new ResponseModel<double>
+                    {
+                        Success = true,
+                        Message = "Average Age Getting Successfull. ",
+                        Data = avgAge
+
+                    });
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+
+        //Get the youngest user age
+        [HttpGet]
+        [Route("GetYoungestUserAge")]
+        public IActionResult GetYoungestUserAge()
+        {
+            try
+            {
+                var age = userManager.GetYoungestUserAge();
+
+                if (age == null)
+                {
+                    return BadRequest(new ResponseModel<int>
+                    {
+                        Success = true,
+                        Message = " Empty User Database !!!!!! ",
+                        Data = age
+
+                    });
+                }
+                else
+                {
+                    return Ok(new ResponseModel<int>
+                    {
+                        Success = true,
+                        Message = "Getting Youngest Age of User Successfully. ",
+                        Data = age
+
+                    });
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        //Get the oldest user age
+        [HttpGet]
+        [Route("GetOldestUserAge")]
+        public IActionResult GetOldestUserAge()
+        {
+            try
+            {
+                var age = userManager.GetOldestUserAge();
+
+                if (age == null)
+                {
+                    return BadRequest(new ResponseModel<int>
+                    {
+                        Success = true,
+                        Message = " Empty User Database !!!!!! ",
+                        Data = age
+
+                    });
+                }
+                else
+                {
+                    return Ok(new ResponseModel<int>
+                    {
+                        Success = true,
+                        Message = "Getting Oldest Age of User Successfully. ",
+                        Data = age
+
+                    });
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+
+
     }
+
 }
+

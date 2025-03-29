@@ -132,7 +132,67 @@ namespace RepositoryLayer.Services
             }
         }
 
-        
+        //Get all users
+        public List<UserEntity> GetAllUsers()
+        {
+            List<UserEntity> allUsers = context.Users.ToList();
+            return allUsers;
+        }
 
+        //Find a user by ID
+        public UserEntity GetUserById(int userId)
+        {
+            UserEntity User = context.Users.Find(userId);
+            return User;
+        }
+
+        //Get users whose name starts with 'A'
+        public List<UserEntity> GetUsersNameStartsWithLetter(string letter)
+        {
+            List<UserEntity> users = context.Users.Where(u => u.FirstName.StartsWith(letter)).ToList();
+            return users;
+        }
+
+        //Count the total number of users
+        public int CountUsers()
+        {
+            var count = context.Users.Count();
+            return count;
+        }
+
+        //Get users ordered by name (ascending & descending)
+        public List<UserEntity> GetUsersByNamesASC ()
+        {
+            List<UserEntity> users = context.Users.OrderBy(u => u.FirstName).ToList();
+            return users;
+        }
+
+        //Get users ordered by name (ascending & descending)
+        public List<UserEntity> GetUsersByNamesDESC()
+        {
+            List<UserEntity> users = context.Users.OrderByDescending(u => u.FirstName).ToList();
+            return users;
+        }
+
+        //Get the average age of users
+        public double GetUsersAverageAge()
+        {
+            var average = context.Users.Average(x => (DateTime.Now.Year - x.DOB.Year));
+            return average; 
+        }
+
+        //Get the youngest user age
+        public int GetYoungestUserAge()
+        {
+            var Age = context.Users.Select(x => DateTime.Now.Year - x.DOB.Year).ToList();
+            return Age.Min();
+        }
+
+        //Get the oldest user age
+        public int GetOldestUserAge()
+        {
+            var Age = context.Users.Select(x => DateTime.Now.Year - x.DOB.Year).ToList();
+            return Age.Max();
+        }
     }
 }

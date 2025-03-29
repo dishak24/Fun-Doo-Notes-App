@@ -13,5 +13,11 @@ namespace ManagerLayer.Interfaces
 
         //Get all notes
         public List<NotesEntity> GetAllNotes();
+
+        //Fetch Notes using title
+        public List<NotesEntity> GetNotesByTitle(string title);
+
+        //Return Count of notes a user has
+        public int CountAllNotes();
     }
 }

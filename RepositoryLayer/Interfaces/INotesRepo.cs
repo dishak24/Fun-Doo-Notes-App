@@ -1,4 +1,5 @@
 ﻿using CommonLayer.Model;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using RepositoryLayer.Entity;
 using System;
 using System.Collections.Generic;
@@ -13,5 +14,12 @@ namespace RepositoryLayer.Interfaces
 
         //Get all notes
         public List<NotesEntity> GetAllNotes();
+
+        //Fetch Notes using title
+        public List<NotesEntity> GetNotesByTitle(string title);
+
+        //Return Count of notes a user has
+        public int CountAllNotes();
+
     }
 }
