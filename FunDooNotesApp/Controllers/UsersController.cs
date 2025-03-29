@@ -5,6 +5,7 @@ using RepositoryLayer.Entity;
 using System.Threading.Tasks;
 using System;
 using MassTransit;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FunDooNotesApp.Controllers
 {
@@ -117,6 +118,40 @@ namespace FunDooNotesApp.Controllers
                     });
                 }
 
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        //Reset Password API
+        [Authorize]
+        [HttpPost]
+        [Route("ResetPassword")]
+        public IActionResult ResetPassword(ResetPasswordModel model)
+        {
+            try
+            {
+                string email = User.FindFirst("EmailId").Value;
+                if (userManager.ResetPassword(email, model))
+                {
+                    return Ok(new ResponseModel<string>
+                    {
+                        Success = true,
+                        Message = "Done, Password is Reset !"
+
+                    });
+                }
+                else
+                {
+                    return BadRequest(new ResponseModel<string>
+                    {
+                        Success = true,
+                        Message = "Reseting Password Failed !!!!!"
+
+                    });
+                }
             }
             catch (Exception e)
             {

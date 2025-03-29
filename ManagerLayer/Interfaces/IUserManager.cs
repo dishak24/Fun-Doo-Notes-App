@@ -20,5 +20,8 @@ namespace ManagerLayer.Interfaces
         //Forgot password
         public ForgotPasswordModel ForgotPassword(string email);
 
+        //Reset passwod
+        public bool ResetPassword(string email, ResetPasswordModel reset);
+
     }
 }
