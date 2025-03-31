@@ -14,6 +14,9 @@ namespace ManagerLayer.Interfaces
         //Get all notes
         public List<NotesEntity> GetAllNotes();
 
+        //Update Note
+        public NotesEntity UpdateNote(int noteId, NotesModel model, int userId);
+
         //Fetch Notes using title
         public List<NotesEntity> GetNotesByTitle(string title);
 

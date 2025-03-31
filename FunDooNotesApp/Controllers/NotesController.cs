@@ -89,6 +89,42 @@ namespace FunDooNotesApp.Controllers
             }
         }
 
+        [HttpPut]
+        [Route("UpdateNote/{noteId}")]
+        public IActionResult UpdateNote(int noteId, NotesModel model)
+        {
+            try
+            {
+                int userId = int.Parse(User.FindFirst("UserId").Value);
+                NotesEntity note = notesManager.UpdateNote(noteId, model, userId);
+                if (note != null )
+                {
+                    return Ok(new ResponseModel<NotesEntity>
+                    {
+                        Success = true,
+                        Message = "Note Updated Seccessful.  ",
+                        Data = note
+
+                    });
+                }
+                else
+                {
+                    return BadRequest(new ResponseModel<NotesEntity>
+                    {
+                        Success = true,
+                        Message = " Note Upadation failed !!!!!  ",
+                        Data = note
+
+                    });
+                }
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+
+        }
+
         //Fetch Notes using title
         [HttpGet]
         [Route("GetNotesByTitle/{title}")]

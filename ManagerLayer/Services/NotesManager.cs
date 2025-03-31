@@ -29,6 +29,12 @@ namespace ManagerLayer.Services
             return notesRepo.GetAllNotes();
         }
 
+        //Update Note
+        public NotesEntity UpdateNote(int noteId, NotesModel model, int userId)
+        {
+            return notesRepo.UpdateNote(noteId, model, userId);
+        }
+
         //Fetch Notes using title
         public List<NotesEntity> GetNotesByTitle(string title)
         {

@@ -41,6 +41,26 @@ namespace RepositoryLayer.Services
             return allNotes;
         }
 
+        //Update Note
+        public NotesEntity UpdateNote(int noteId, NotesModel model, int userId)
+        {
+            var note = context.Notes.FirstOrDefault(n => n.NotesId == noteId && n.UserId == userId);
+            if (note != null)
+            {
+                note.Title = model.Title;
+                note.Description = model.Description;
+                note.Remainder = note.Remainder;
+                context.SaveChanges();
+                return note;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        
+
         //Fetch Notes using title
         public List<NotesEntity> GetNotesByTitle(string title)
         {
@@ -53,5 +73,6 @@ namespace RepositoryLayer.Services
         {
             return context.Notes.Count();
         }
+
     }
 }
