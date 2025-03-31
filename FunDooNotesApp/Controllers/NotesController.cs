@@ -230,5 +230,186 @@ namespace FunDooNotesApp.Controllers
             }
         }
 
+        //To Pin or UnPin note
+        [HttpPut]
+        [Route("Pin/{noteId}")]
+        public IActionResult PinNote(int noteId)
+        {
+            try
+            {
+                var userId = int.Parse(User.FindFirst("UserId").Value);
+                var result = notesManager.PinNote(noteId, userId);
+                if (result)
+                {
+                    return Ok(new ResponseModel<bool>
+                    {
+                        Success = true,
+                        Message = "Pinned or UnPinned Note Successfull.",
+                        Data = result
+
+                    });
+                }
+                else
+                {
+                    return BadRequest(new ResponseModel<bool>
+                    {
+                        Success = true,
+                        Message = "failed this Operation !!!!! ",
+                        Data = result
+
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+
+        //To Archive note
+        [HttpPut]
+        [Route("Archive/{noteId}")]
+        public IActionResult ArchiveNote(int noteId)
+        {
+            try
+            {
+                var userId = int.Parse(User.FindFirst("UserId").Value);
+                var result = notesManager.ArchiveNote(noteId, userId);
+                if (result)
+                {
+                    return Ok(new ResponseModel<bool>
+                    {
+                        Success = true,
+                        Message = " Note Archived Successfull.",
+                        Data = result
+
+                    });
+                }
+                else
+                {
+                    return BadRequest(new ResponseModel<bool>
+                    {
+                        Success = true,
+                        Message = "failed this Operation !!!!! ",
+                        Data = result
+
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        //To Trash note
+        [HttpPut]
+        [Route("Trash/{noteId}")]
+        public IActionResult TrashNote(int noteId)
+        {
+            try
+            {
+                var userId = int.Parse(User.FindFirst("UserId").Value);
+                var result = notesManager.TrashNote(noteId, userId);
+                if (result)
+                {
+                    return Ok(new ResponseModel<bool>
+                    {
+                        Success = true,
+                        Message = "Note Trashed Successfull.",
+                        Data = result
+
+                    });
+                }
+                else
+                {
+                    return BadRequest(new ResponseModel<bool>
+                    {
+                        Success = true,
+                        Message = "failed this Operation !!!!! ",
+                        Data = result
+
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        //To add colour to note
+        [HttpPut]
+        [Route("AddColour/{noteId}")]
+        public IActionResult AddColourToNote(int noteId, string colour)
+        {
+            try
+            {
+                var userId = int.Parse(User.FindFirst("UserId").Value);
+                var result = notesManager.AddColourToNote(noteId, colour,userId);
+                if (result)
+                {
+                    return Ok(new ResponseModel<bool>
+                    {
+                        Success = true,
+                        Message = "Successfully added colour to Note .",
+                        Data = result
+
+                    });
+                }
+                else
+                {
+                    return BadRequest(new ResponseModel<bool>
+                    {
+                        Success = true,
+                        Message = "failed this Operation !!!!! ",
+                        Data = result
+
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        //To add Remainder to note
+        [HttpPut]
+        [Route("AddReaminder/{noteId}")]
+        public IActionResult AddRemainderToNote(int noteId, DateTime remainder)
+        {
+            try
+            {
+                var userId = int.Parse(User.FindFirst("UserId").Value);
+                var result = notesManager.AddRemainderToNote(noteId, remainder, userId);
+                if (result)
+                {
+                    return Ok(new ResponseModel<bool>
+                    {
+                        Success = true,
+                        Message = "Successfully added Remainder to Note.",
+                        Data = result
+
+                    });
+                }
+                else
+                {
+                    return BadRequest(new ResponseModel<bool>
+                    {
+                        Success = true,
+                        Message = "failed this Operation !!!!! ",
+                        Data = result
+
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
     }
 }

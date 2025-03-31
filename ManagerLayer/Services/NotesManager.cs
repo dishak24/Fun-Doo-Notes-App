@@ -52,5 +52,35 @@ namespace ManagerLayer.Services
         {
             return notesRepo.CountAllNotes();
         }
+
+        //To Pin note
+        public bool PinNote(int noteId, int userId)
+        {
+            return notesRepo.PinNote(noteId, userId);
+        }
+
+        //Archive
+        public bool ArchiveNote(int noteId, int userId)
+        {
+            return notesRepo.ArchiveNote(noteId, userId);
+        }
+
+        //Trash
+        public bool TrashNote(int noteId, int userId)
+        {
+            return notesRepo.TrashNote(noteId, userId);
+        }
+
+        //To Add Colour of Note
+        public bool AddColourToNote(int noteId, string colour, int userId)
+        {
+            return notesRepo.AddColourToNote(noteId, colour, userId);
+        }
+
+        //To Add Remainder to Note
+        public bool AddRemainderToNote(int noteId, DateTime remainder, int userId)
+        {
+            return notesRepo.AddRemainderToNote(noteId, remainder, userId);
+        }
     }
 }

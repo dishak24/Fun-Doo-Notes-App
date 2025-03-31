@@ -89,5 +89,119 @@ namespace RepositoryLayer.Services
             return context.Notes.Count();
         }
 
+        //To Pin note
+        public bool PinNote(int noteId, int userId)
+        {
+            NotesEntity note = context.Notes.FirstOrDefault(n => n.NotesId == noteId && n.UserId == userId);
+            if (note != null)
+            {
+                if (note.IsPinned)
+                {
+                    note.IsPinned = false;
+                    context.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    note.IsPinned = true;
+                    context.SaveChanges();
+                    return true;
+                }
+          
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        //To archive Note
+        public bool ArchiveNote(int noteId, int userId)
+        {
+            NotesEntity note = context.Notes.FirstOrDefault(n => n.NotesId == noteId && n.UserId == userId);
+            if (note != null)
+            {
+                if (note.IsArchived && note.IsPinned == false)
+                {
+                    note.IsArchived = false;
+                    context.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    note.IsArchived = true;
+                    note.IsPinned = false;
+                    context.SaveChanges();
+                    return true;
+                }
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        //To archive Note
+        public bool TrashNote(int noteId, int userId)
+        {
+            NotesEntity note = context.Notes.FirstOrDefault(n => n.NotesId == noteId && n.UserId == userId);
+            if (note != null)
+            {
+                if (note.IsTrashed)
+                {
+                    note.IsTrashed = false;
+                    context.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    note.IsTrashed = true;
+                    context.SaveChanges();
+                    return true;
+                }
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        //To Add Colour of Note
+        public bool AddColourToNote(int noteId, string colour, int userId)
+        {
+            NotesEntity note = context.Notes.FirstOrDefault(n => n.NotesId == noteId && n.UserId == userId);
+            if (note != null)
+            {
+                note.Colour = colour;
+                context.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+
+        //To Add Remainder to Note
+        public bool AddRemainderToNote(int noteId, DateTime remainder, int userId)
+        {
+            NotesEntity note = context.Notes.FirstOrDefault(n => n.NotesId == noteId && n.UserId == userId);
+            if (note != null)
+            {
+                note.Remainder = remainder;
+                context.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
     }
 }
