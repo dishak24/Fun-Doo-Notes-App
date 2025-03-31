@@ -89,6 +89,7 @@ namespace FunDooNotesApp.Controllers
             }
         }
 
+        //API : To Update Notes 
         [HttpPut]
         [Route("UpdateNote/{noteId}")]
         public IActionResult UpdateNote(int noteId, NotesModel model)
@@ -123,6 +124,42 @@ namespace FunDooNotesApp.Controllers
                 throw e;
             }
 
+        }
+
+        //To Delete Note
+        [HttpDelete]
+        [Route("DeleteNote/{noteId}")]
+        public IActionResult DeleteNote(int noteId)
+        {
+            try
+            {
+                var userId = int.Parse(User.FindFirst("UserId").Value);
+                bool note = notesManager.DeleteNote(noteId, userId);
+                if (note)
+                {
+                    return Ok(new ResponseModel<bool>
+                    {
+                        Success = true,
+                        Message = "Note Deleted Seccessfully.  ",
+                        Data = note
+
+                    });
+                }
+                else
+                {
+                    return BadRequest(new ResponseModel<bool>
+                    {
+                        Success = true,
+                        Message = "Deletion Failed !!!! ",
+                        Data = note
+
+                    });
+                }
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
         }
 
         //Fetch Notes using title

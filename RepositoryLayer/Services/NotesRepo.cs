@@ -59,7 +59,22 @@ namespace RepositoryLayer.Services
             }
         }
 
-        
+        //Delete Note
+        public bool DeleteNote (int noteId, int userId)
+        {
+            var note = context.Notes.FirstOrDefault(n => n.NotesId == noteId && n.UserId == userId);
+            if ( note != null)
+            {
+                context.Notes.Remove(note);
+                context.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
 
         //Fetch Notes using title
         public List<NotesEntity> GetNotesByTitle(string title)

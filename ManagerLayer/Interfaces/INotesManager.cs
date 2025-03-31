@@ -17,6 +17,9 @@ namespace ManagerLayer.Interfaces
         //Update Note
         public NotesEntity UpdateNote(int noteId, NotesModel model, int userId);
 
+        //Delete Note
+        public bool DeleteNote(int noteId, int userId);
+
         //Fetch Notes using title
         public List<NotesEntity> GetNotesByTitle(string title);
 

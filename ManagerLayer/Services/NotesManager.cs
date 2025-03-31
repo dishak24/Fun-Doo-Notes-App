@@ -35,6 +35,12 @@ namespace ManagerLayer.Services
             return notesRepo.UpdateNote(noteId, model, userId);
         }
 
+        //Delete Note
+        public bool DeleteNote(int noteId, int userId)
+        {
+            return notesRepo.DeleteNote(noteId, userId);
+        }
+
         //Fetch Notes using title
         public List<NotesEntity> GetNotesByTitle(string title)
         {
