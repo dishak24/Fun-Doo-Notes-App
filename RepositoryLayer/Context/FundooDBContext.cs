@@ -12,10 +12,13 @@ namespace RepositoryLayer.Context
         {
         }
 
-        //For table creation
+        //For create User table 
         public DbSet<UserEntity> Users { get; set; }
 
         //Create Table Notes
         public DbSet<NotesEntity> Notes { get; set; }
+
+        //Create Collaborators table
+        public DbSet<CollaboratorsEntity> Collaborators { get; set; }
     }
 }

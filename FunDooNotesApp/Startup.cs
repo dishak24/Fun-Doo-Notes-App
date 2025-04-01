@@ -49,6 +49,10 @@ namespace FunDooNotesApp
             services.AddTransient<INotesRepo, NotesRepo>();
             services.AddTransient<INotesManager, NotesManager>();
 
+            //For Collaborators
+            services.AddTransient<ICollaboratorsRepo, CollaboratorsRepo>();
+            services.AddTransient<ICollaboratorsManager, CollaboratorsManager>();
+
             //For swagger
             //services.AddSwaggerGen();
 

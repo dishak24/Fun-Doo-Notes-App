@@ -44,5 +44,7 @@ namespace ManagerLayer.Interfaces
 
         //To adding Image to Note
         public bool AddImage(int NoteId, int UserId, IFormFile image);
+
+       
     }
 }

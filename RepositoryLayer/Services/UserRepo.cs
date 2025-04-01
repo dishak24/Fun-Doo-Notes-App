@@ -27,6 +27,7 @@ namespace RepositoryLayer.Services
         public UserEntity Register(RegisterModel model)
         {
             UserEntity user = new UserEntity();
+
             user.FirstName = model.FirstName;
             user.LastName = model.LastName;
             user.DOB = model.DOB;
