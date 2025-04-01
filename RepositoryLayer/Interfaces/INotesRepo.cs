@@ -1,4 +1,5 @@
 ﻿using CommonLayer.Model;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using RepositoryLayer.Entity;
 using System;
@@ -41,6 +42,9 @@ namespace RepositoryLayer.Interfaces
 
         //To Add Remainder to Note
         public bool AddRemainderToNote(int noteId, DateTime remainder, int userId);
+
+        //To adding Image to Note
+        public bool AddImage(int NoteId, int UserId, IFormFile image);
 
     }
 }

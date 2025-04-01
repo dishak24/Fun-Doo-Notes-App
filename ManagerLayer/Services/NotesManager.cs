@@ -1,5 +1,6 @@
 ﻿using CommonLayer.Model;
 using ManagerLayer.Interfaces;
+using Microsoft.AspNetCore.Http;
 using RepositoryLayer.Entity;
 using RepositoryLayer.Interfaces;
 using System;
@@ -81,6 +82,12 @@ namespace ManagerLayer.Services
         public bool AddRemainderToNote(int noteId, DateTime remainder, int userId)
         {
             return notesRepo.AddRemainderToNote(noteId, remainder, userId);
+        }
+
+        //To adding Image to Note
+        public bool AddImage(int NoteId, int UserId, IFormFile image)
+        {
+            return notesRepo.AddImage(NoteId, UserId, image);
         }
     }
 }

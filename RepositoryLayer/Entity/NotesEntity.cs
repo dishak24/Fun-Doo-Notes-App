@@ -16,6 +16,7 @@ namespace RepositoryLayer.Entity
         public string Description { get; set; }
         public DateTime Remainder { get; set; }
         public string Colour { get; set; }
+        public string Image { get; set; }
         public bool IsArchived { get; set; }
         public bool IsPinned { get; set; }
         public bool IsTrashed { get; set; }

@@ -1,7 +1,12 @@
-﻿using CommonLayer.Model;
+﻿using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
+using CommonLayer.Model;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using RepositoryLayer.Context;
 using RepositoryLayer.Entity;
 using RepositoryLayer.Interfaces;
+using RepositoryLayer.Migrations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +17,11 @@ namespace RepositoryLayer.Services
     public class NotesRepo : INotesRepo
     {
         private readonly FundooDBContext context;
-
-        public NotesRepo(FundooDBContext context)
+        private readonly IConfiguration configuration;
+        public NotesRepo(FundooDBContext context, IConfiguration configuration)
         {
             this.context = context;
+            this.configuration = configuration;
         }
 
         //Adding new Note
@@ -202,6 +208,36 @@ namespace RepositoryLayer.Services
             }
         }
 
+        //To adding Image to Note
+        public bool AddImage( int NoteId, int UserId , IFormFile image)
+        {
+            NotesEntity notesEntity = context.Notes.ToList().Find(n => n.NotesId == NoteId && n.UserId == UserId);
+            if (notesEntity != null)
+            {
+                Account account = new Account(
+                    configuration["CloudinarySettings:CloudName"],
+                    configuration["CloudinarySettings:ApiKey"],
+                    configuration["CloudinarySettings:ApiSecret"]                
+                    );
+                Cloudinary cloudinary = new Cloudinary(account);
+
+                var UploadParameters = new ImageUploadParams()
+                {
+                    File = new FileDescription(image.FileName, image.OpenReadStream())
+
+                };
+
+                var UploadResult = cloudinary.Upload(UploadParameters);
+                string ImagePath = UploadResult.Url.ToString();
+                notesEntity.Image = ImagePath;
+                context.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+       }
 
     }
 }

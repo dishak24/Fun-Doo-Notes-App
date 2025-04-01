@@ -1,5 +1,6 @@
 ﻿using CommonLayer.Model;
 using ManagerLayer.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RepositoryLayer.Entity;
 using RepositoryLayer.Migrations;
@@ -406,6 +407,44 @@ namespace FunDooNotesApp.Controllers
                 }
             }
             catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+
+        //To adding Image to Note
+        [HttpPut]
+        [Route("AddImage")]
+        public IActionResult AddImage(int NoteId, IFormFile Image)
+        {
+            try
+            {
+                var UserId = int.Parse(User.FindFirst("UserId").Value);
+                var result = notesManager.AddImage(NoteId, UserId, Image);
+                if (result)
+                {
+                    return Ok(new ResponseModel<bool>
+                    {
+                        Success = true,
+                        Message = "Successfully added Image to Note.",
+                        Data = result
+
+                    });
+                }
+                else
+                {
+                    return BadRequest(new ResponseModel<bool>
+                    {
+                        Success = true,
+                        Message = "failed to add image !!!!!!",
+                        Data = result
+
+                    });
+                }
+
+            }
+            catch(Exception e)
             {
                 throw e;
             }
