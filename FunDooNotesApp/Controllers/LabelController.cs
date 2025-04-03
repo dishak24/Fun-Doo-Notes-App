@@ -38,7 +38,7 @@ namespace FunDooNotesApp.Controllers
         }
 
 
-        // Get All Labels for a User
+        // Get All Labels of Users ---not from notes
         [HttpGet()]
         [Route("GetAllLabels")]
         public async Task<IActionResult> GetLabels()
