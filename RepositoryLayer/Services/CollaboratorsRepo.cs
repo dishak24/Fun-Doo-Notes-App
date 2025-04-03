@@ -35,7 +35,7 @@ namespace RepositoryLayer.Services
         //Get All Collaborator
         public List<CollaboratorsEntity> GetAllCollaborators(int NoteId, int UserId)
         {
-            List<CollaboratorsEntity> collaborators = context.Collaborators.ToList();
+            List<CollaboratorsEntity> collaborators = context.Collaborators.Where( c => c.NoteId == NoteId).ToList();
             return collaborators;
         }
 

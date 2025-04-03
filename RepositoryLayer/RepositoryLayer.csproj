@@ -5,6 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20250403013524_FixLabelForeignKey.cs" />
+    <Compile Remove="Migrations\20250403013524_FixLabelForeignKey.Designer.cs" />
+    <Compile Remove="Migrations\20250403015750_RemoveNoteUserUserId.cs" />
+    <Compile Remove="Migrations\20250403015750_RemoveNoteUserUserId.Designer.cs" />
+    <Compile Remove="Migrations\20250403020029_FixedLabelsTable.cs" />
+    <Compile Remove="Migrations\20250403020029_FixedLabelsTable.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
 	  <PackageReference Include="CloudinaryDotNet" Version="1.27.5" />
 	  <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />

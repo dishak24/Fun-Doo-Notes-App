@@ -53,6 +53,10 @@ namespace FunDooNotesApp
             services.AddTransient<ICollaboratorsRepo, CollaboratorsRepo>();
             services.AddTransient<ICollaboratorsManager, CollaboratorsManager>();
 
+            //For Labels
+            services.AddTransient<ILabelRepo, LabelRepo>();
+            services.AddTransient<ILabelManager, LabelManager>();
+
             //For swagger
             //services.AddSwaggerGen();
 

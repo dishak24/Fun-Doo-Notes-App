@@ -29,5 +29,8 @@ namespace RepositoryLayer.Entity
         // If we not write JsonIgnote then it takes all coloumns from UserEmtity that we dont want.
         [JsonIgnore]
         public virtual UserEntity NotesUser { get; set; }
+
+        //Fot Many to many relation---adding later while creating Label
+        public ICollection<NoteLabelEntity> NoteLabels { get; set; } = new List<NoteLabelEntity>();
     }
 }

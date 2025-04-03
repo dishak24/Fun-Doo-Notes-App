@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RepositoryLayer.Context;
 
 namespace RepositoryLayer.Migrations
 {
     [DbContext(typeof(FundooDBContext))]
-    partial class FundooDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250403001102_Labels")]
+    partial class Labels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -54,12 +56,15 @@ namespace RepositoryLayer.Migrations
                     b.Property<string>("LabelName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("NoteUserUserId")
+                        .HasColumnType("int");
+
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("LabelId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("NoteUserUserId");
 
                     b.ToTable("Labels");
                 });
@@ -167,11 +172,9 @@ namespace RepositoryLayer.Migrations
 
             modelBuilder.Entity("RepositoryLayer.Entity.LabelEntity", b =>
                 {
-                    b.HasOne("RepositoryLayer.Entity.UserEntity", "User")
+                    b.HasOne("RepositoryLayer.Entity.UserEntity", "NoteUser")
                         .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("NoteUserUserId");
                 });
 
             modelBuilder.Entity("RepositoryLayer.Entity.NoteLabelEntity", b =>
@@ -179,13 +182,13 @@ namespace RepositoryLayer.Migrations
                     b.HasOne("RepositoryLayer.Entity.LabelEntity", "Label")
                         .WithMany("NoteLabels")
                         .HasForeignKey("LabelId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("RepositoryLayer.Entity.NotesEntity", "Note")
                         .WithMany("NoteLabels")
                         .HasForeignKey("NoteId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
