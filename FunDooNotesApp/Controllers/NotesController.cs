@@ -2,10 +2,20 @@
 using ManagerLayer.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using RabbitMQ.Client.Impl;
+using RepositoryLayer.Context;
 using RepositoryLayer.Entity;
 using RepositoryLayer.Migrations;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace FunDooNotesApp.Controllers
 {
@@ -13,11 +23,21 @@ namespace FunDooNotesApp.Controllers
     [ApiController]
     public class NotesController : ControllerBase
     {
-            private readonly INotesManager notesManager;
-            public NotesController(INotesManager notesManager)
-            {
-                this.notesManager = notesManager;
-            }
+        private readonly INotesManager notesManager;
+
+        //For Logger
+        private readonly ILogger<UsersController> logger;
+
+        //Dependencies For redis cache
+        private readonly FundooDBContext Context;
+        private readonly IDistributedCache cache;
+        public NotesController(INotesManager notesManager, IDistributedCache cache, FundooDBContext Context, ILogger<UsersController> logger)
+         {
+            this.notesManager = notesManager;
+            this.cache = cache;
+            this.Context = Context;
+            this.logger = logger;
+         }
 
             //API for Creating/adding new Note
             [HttpPost]
@@ -26,7 +46,15 @@ namespace FunDooNotesApp.Controllers
             {
                 try
                 {
-                    int userId = int.Parse(User.FindFirst("UserId").Value);
+                //int userId = int.Parse(User.FindFirst("UserId").Value);
+
+                
+                /*
+                 * ----------To Retrieve UserId from the session-------------------
+                 * If UserId exists, its value is retrieved.
+                 * If UserId is null(not set in the session), userId is assigned 0
+                 */
+                    int userId = (int)HttpContext.Session.GetInt32("UserId");
 
                     var note = notesManager.CreateNote(userId, notesModel);
                     if (note != null)
@@ -52,6 +80,7 @@ namespace FunDooNotesApp.Controllers
                 }
                 catch (Exception e)
                 {
+                    logger.LogError(e.ToString());
                     throw e;
                 }
             }
@@ -63,7 +92,8 @@ namespace FunDooNotesApp.Controllers
         {
             try
             {
-                List<NotesEntity> notes = notesManager.GetAllNotes();
+                int userId = int.Parse(User.FindFirst("UserId").Value);
+                List<NotesEntity> notes = notesManager.GetAllNotes(userId);
                 if (notes == null)
                 {
                     return BadRequest(new ResponseModel<string>
@@ -86,6 +116,7 @@ namespace FunDooNotesApp.Controllers
             }
             catch (Exception e)
             {
+                logger.LogError(e.ToString());
                 throw e;
             }
         }
@@ -448,6 +479,44 @@ namespace FunDooNotesApp.Controllers
             {
                 throw e;
             }
+        }
+
+
+        //Using Radis cache
+        [HttpGet]
+        [Route("GetAllNotes-RedisCache")]
+        public async Task<IActionResult> GetAllNotesUsingRedisCache()
+        {
+            try
+            {
+
+                var CacheKey = "NoteList";
+                string SerializedNoteList;
+                var NotesList = new List<NotesEntity>();
+                byte[] RedisNotesList = await cache.GetAsync(CacheKey);
+                if (RedisNotesList != null)
+                {
+                    SerializedNoteList = Encoding.UTF8.GetString(RedisNotesList);
+                    NotesList = JsonConvert.DeserializeObject<List<NotesEntity>>(SerializedNoteList);
+                }
+                else
+                {
+                    NotesList = Context.Notes.ToList();
+                    SerializedNoteList = JsonConvert.SerializeObject(NotesList);
+                    RedisNotesList = Encoding.UTF8.GetBytes(SerializedNoteList);
+                    var option = new DistributedCacheEntryOptions()
+                        .SetAbsoluteExpiration(DateTime.Now.AddMinutes(30))
+                        .SetSlidingExpiration(TimeSpan.FromMinutes(5));
+                    await cache.SetAsync(CacheKey, RedisNotesList, option);
+                }
+                return Ok(NotesList);
+            }
+            catch(Exception e)
+            {
+                logger.LogError(e.ToString());
+                throw e;
+            }
+
         }
 
     }

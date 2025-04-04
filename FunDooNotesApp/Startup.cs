@@ -40,6 +40,8 @@ namespace FunDooNotesApp
 
             //for configure database connection
             services.AddDbContext<FundooDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DbConnection"]));
+            //For Redis Cache
+            services.AddStackExchangeRedisCache(options => { options.Configuration = Configuration["RedisCacheUrl"]; });
 
             //for user
             services.AddTransient<IUserRepo, UserRepo>();
@@ -128,6 +130,15 @@ namespace FunDooNotesApp
                     });
                 }));
             });
+
+            //For applying Session - To store users data. 
+            services.AddSession(x =>
+            {
+                x.IdleTimeout = TimeSpan.FromMinutes(1);
+                x.Cookie.HttpOnly = true;
+                x.Cookie.IsEssential = true;
+            });
+
             services.AddMassTransitHostedService();
         }
 
@@ -152,6 +163,9 @@ namespace FunDooNotesApp
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Employee API V1");
             });
+
+            // Enable session middleware
+            app.UseSession();
 
             app.UseRouting();
 

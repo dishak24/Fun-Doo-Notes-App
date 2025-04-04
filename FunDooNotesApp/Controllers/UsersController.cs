@@ -8,6 +8,13 @@ using MassTransit;
 using Microsoft.AspNetCore.Authorization;
 using System.Collections.Generic;
 using RepositoryLayer.Migrations;
+using Microsoft.Extensions.Caching.Distributed;
+using Newtonsoft.Json;
+using System.Text;
+using RepositoryLayer.Context;
+using System.Linq;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 
 namespace FunDooNotesApp.Controllers
 {
@@ -17,12 +24,23 @@ namespace FunDooNotesApp.Controllers
     {
         private readonly IUserManager userManager;
 
+        //For Rabbit MQ
         private readonly IBus bus;
 
-        public UsersController(IUserManager userManager, IBus bus)
+        //For Logger
+        private readonly ILogger<UsersController> logger;
+
+        //Dependencies For redis cache
+        private readonly IDistributedCache cache;
+        private readonly FundooDBContext Context;
+
+        public UsersController(IUserManager userManager, IBus bus, IDistributedCache cache, FundooDBContext Context, ILogger<UsersController> logger)
         {
             this.userManager = userManager;
             this.bus = bus;
+            this.cache = cache;
+            this.Context = Context;
+            this.logger = logger;
         }
 
         [HttpPost]
@@ -31,6 +49,7 @@ namespace FunDooNotesApp.Controllers
         {
             //adding code to checking email already used or not
             var check = userManager.CheckEmailExist(model.Email);
+            
             if (check)
             {
                 return BadRequest(new ResponseModel<UserEntity>
@@ -42,6 +61,10 @@ namespace FunDooNotesApp.Controllers
             else
             {
                 var result = userManager.Register(model);
+
+                //This stores (result.UserId) in the session under the key "UserId"
+               HttpContext.Session.SetInt32("UserId", result.UserId );
+
                 if (result != null)
                 {
                     return Ok(new ResponseModel<UserEntity>
@@ -492,6 +515,34 @@ namespace FunDooNotesApp.Controllers
             }
         }
 
+
+        //Radis cache
+        [HttpGet]
+        [Route("GetAllUsers-RedisCache")]
+        public async Task<IActionResult> GetAllNotesUsingRedisCache()
+        {
+            var CacheKey = "UserList";
+            string SerializedNoteList;
+            var UserList = new List<UserEntity>();
+            byte[] RedisNotesList = await cache.GetAsync(CacheKey);
+            if (RedisNotesList != null)
+            {
+                SerializedNoteList = Encoding.UTF8.GetString(RedisNotesList);
+                UserList = JsonConvert.DeserializeObject<List<UserEntity>>(SerializedNoteList);
+            }
+            else
+            {
+                UserList = Context.Users.ToList();
+                SerializedNoteList = JsonConvert.SerializeObject(UserList);
+                RedisNotesList = Encoding.UTF8.GetBytes(SerializedNoteList);
+                var option = new DistributedCacheEntryOptions()
+                    .SetAbsoluteExpiration(DateTime.Now.AddMinutes(30))
+                    .SetSlidingExpiration(TimeSpan.FromMinutes(5));
+                await cache.SetAsync(CacheKey, RedisNotesList, option);
+            }
+            return Ok(UserList);
+
+        }
 
 
     }

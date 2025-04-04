@@ -13,7 +13,7 @@ namespace ManagerLayer.Interfaces
         public NotesEntity CreateNote(int userId, NotesModel notesModel);
 
         //Get all notes
-        public List<NotesEntity> GetAllNotes();
+        public List<NotesEntity> GetAllNotes(int UserId);
 
         //Update Note
         public NotesEntity UpdateNote(int noteId, NotesModel model, int userId);

@@ -25,7 +25,7 @@ namespace CommonLayer.Model
 
         [Required(ErrorMessage = "Birth date is required !!")]
         [DataType(DataType.Date, ErrorMessage = "Invalide Date format.")]
-        [Range(typeof(DateTime), "2001-01-01", "2025-01-01", ErrorMessage = "Birthdate must be between 2001 - 2025.")]
+        [Range(typeof(DateTime), "1970-01-01", "2020-01-01", ErrorMessage = "Birthdate must be between 2001 - 2025.")]
         public DateTime DOB { get; set; }
 
 

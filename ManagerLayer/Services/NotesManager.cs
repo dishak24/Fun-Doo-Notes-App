@@ -25,9 +25,9 @@ namespace ManagerLayer.Services
         }
 
         //Get all notes
-        public List<NotesEntity> GetAllNotes()
+        public List<NotesEntity> GetAllNotes(int UserId)
         {
-            return notesRepo.GetAllNotes();
+            return notesRepo.GetAllNotes(UserId);
         }
 
         //Update Note

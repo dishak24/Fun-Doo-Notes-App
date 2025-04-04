@@ -41,9 +41,11 @@ namespace RepositoryLayer.Services
         }
 
         //To get all notes
-        public List<NotesEntity> GetAllNotes()
+        public List<NotesEntity> GetAllNotes(int UserId)
         {
-            List<NotesEntity> allNotes = context.Notes.ToList();
+            //var note = context.Notes.FirstOrDefault(n => n.UserId == UserId);
+
+            List<NotesEntity> allNotes = context.Notes.Where( x => x.UserId == UserId).ToList();
             return allNotes;
         }
 

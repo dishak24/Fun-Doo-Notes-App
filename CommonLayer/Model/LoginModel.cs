@@ -16,9 +16,9 @@ namespace CommonLayer.Model
 
 
         [Required(ErrorMessage = "Password is Required !!")]
-        [PasswordPropertyText]
+        /*[PasswordPropertyText]
         [RegularExpression(@"^(.*[A-Z])(.*[a-z])(.*\d)(.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$",
                                 ErrorMessage = "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character. and atleast 8 digit password !")]
-        public string Password { get; set; }
+*/        public string Password { get; set; }
     }
 }
