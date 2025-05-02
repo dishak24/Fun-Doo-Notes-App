@@ -40,14 +40,21 @@ namespace RepositoryLayer.Context
                 .HasOne(nl => nl.Note)
                 .WithMany(n => n.NoteLabels)
                 .HasForeignKey(nl => nl.NoteId)
-                .OnDelete(DeleteBehavior.Restrict); // Use Restrict instead of Cascade;
+                .OnDelete(DeleteBehavior.Cascade);
 
 
             modelBuilder.Entity<NoteLabelEntity>()
                 .HasOne(nl => nl.Label)
                 .WithMany(l => l.NoteLabels)
                 .HasForeignKey(nl => nl.LabelId)
-                .OnDelete(DeleteBehavior.Restrict); // Use Restrict instead of Cascade;
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<CollaboratorsEntity>()
+                .HasOne(c => c.CollaborateNote)
+                .WithMany(n => n.Collaborators)
+                .HasForeignKey(c => c.NoteId)
+                .OnDelete(DeleteBehavior.Cascade);
+
 
         }
 

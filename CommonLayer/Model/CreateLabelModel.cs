@@ -9,7 +9,7 @@ namespace CommonLayer.Model
     //request models
     public class CreateLabelModel
     {
-        [Required(ErrorMessage = "Label Name is required !!")]
+       // [Required(ErrorMessage = "Label Name is required !!")]
         public string LabelName { get; set; } = string.Empty;
     }
 }

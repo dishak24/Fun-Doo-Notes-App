@@ -1,4 +1,5 @@
 ﻿using CommonLayer.Model;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using RepositoryLayer.Context;
@@ -10,6 +11,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace RepositoryLayer.Services
 {
@@ -24,7 +26,7 @@ namespace RepositoryLayer.Services
         }
 
         //Register User
-        public UserEntity Register(RegisterModel model)
+        public async Task<UserEntity> Register(RegisterModel model)
         {
             UserEntity user = new UserEntity();
 
@@ -35,7 +37,7 @@ namespace RepositoryLayer.Services
             user.Email = model.Email;
             user.Password = EncodePasswordToBase64(model.Password);
 
-            this.context.Users.Add(user);
+            await context.Users.AddAsync(user);
             context.SaveChanges();
             return user;
         }
@@ -57,9 +59,9 @@ namespace RepositoryLayer.Services
         }
 
         //Checking email exist or not. Duplicate email not allowed
-        public bool CheckEmailExist(string email)
+        public async Task<bool> CheckEmailExist(string email)
         {
-            var result = this.context.Users.FirstOrDefault(x => x.Email == email);
+            var result = await this.context.Users.FirstOrDefaultAsync(x => x.Email == email);
             if (result == null)
             {
                 return false;
@@ -68,13 +70,13 @@ namespace RepositoryLayer.Services
         }
 
         //User Login
-        public string Login(LoginModel loginModel)
+        public async Task<string> Login(LoginModel loginModel)
         {
-            var checkUser = this.context.Users.FirstOrDefault(u => u.Email == loginModel.Email && u.Password == EncodePasswordToBase64(loginModel.Password));
+            var checkUser = await this.context.Users.FirstOrDefaultAsync(u => u.Email == loginModel.Email && u.Password == EncodePasswordToBase64(loginModel.Password));
             if (checkUser != null)
             {
                 //return user;
-                var token = GenerateToken(checkUser.Email, checkUser.UserId);
+                var token = await GenerateToken(checkUser.Email, checkUser.UserId);
                 return token;
             }
             return null;
@@ -82,7 +84,7 @@ namespace RepositoryLayer.Services
 
 
         // To generate token
-        private string GenerateToken(string emailId, int userId)
+        private async Task<string> GenerateToken(string emailId, int userId)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
@@ -94,7 +96,7 @@ namespace RepositoryLayer.Services
             var token = new JwtSecurityToken(configuration["Jwt:Issuer"],
                 configuration["Jwt:Audience"],
                 claims,
-                expires: DateTime.Now.AddHours(2),
+                expires: DateTime.Now.AddHours(7),
                 signingCredentials: credentials);
 
 
@@ -104,24 +106,24 @@ namespace RepositoryLayer.Services
 
 
         //Forgot password method.
-        public ForgotPasswordModel ForgotPassword(string email)
+        public async Task<ForgotPasswordModel> ForgotPassword(string email)
         {
             var User = context.Users.ToList().Find(u => u.Email == email);
             ForgotPasswordModel forgotPassword = new ForgotPasswordModel();
             forgotPassword.UserId = User.UserId;
             forgotPassword.Email = User.Email;
-            forgotPassword.Token = GenerateToken(User.Email, User.UserId);
+            forgotPassword.Token = await GenerateToken(User.Email, User.UserId);
             return forgotPassword;
         }
 
         //To Reset the password:
         //1. check email exist or not
         //2. then change password
-        public bool ResetPassword(string email, ResetPasswordModel reset)
+        public async Task<bool> ResetPassword(string email, ResetPasswordModel reset)
         {
             var user = context.Users.ToList().Find(u => u.Email == email);
 
-            if (CheckEmailExist(user.Email))
+            if (await CheckEmailExist(user.Email))
             {
                 user.Password = EncodePasswordToBase64(reset.ConfirmPassword);
                 context.SaveChanges();
@@ -134,65 +136,65 @@ namespace RepositoryLayer.Services
         }
 
         //Get all users
-        public List<UserEntity> GetAllUsers()
+        public async Task<List<UserEntity>> GetAllUsers()
         {
-            List<UserEntity> allUsers = context.Users.ToList();
+            List<UserEntity> allUsers = await context.Users.ToListAsync();
             return allUsers;
         }
 
         //Find a user by ID
-        public UserEntity GetUserById(int userId)
+        public async Task<UserEntity> GetUserById(int userId)
         {
-            UserEntity User = context.Users.Find(userId);
+            UserEntity User = await context.Users.FindAsync(userId);
             return User;
         }
 
         //Get users whose name starts with 'A'
-        public List<UserEntity> GetUsersNameStartsWithLetter(string letter)
+        public async Task<List<UserEntity>> GetUsersNameStartsWithLetter(string letter)
         {
-            List<UserEntity> users = context.Users.Where(u => u.FirstName.StartsWith(letter)).ToList();
+            List<UserEntity> users = await context.Users.Where(u => u.FirstName.StartsWith(letter)).ToListAsync();
             return users;
         }
 
         //Count the total number of users
-        public int CountUsers()
+        public async Task<int> CountUsers()
         {
-            var count = context.Users.Count();
+            var count = await context.Users.CountAsync();
             return count;
         }
 
         //Get users ordered by name (ascending & descending)
-        public List<UserEntity> GetUsersByNamesASC ()
+        public async Task<List<UserEntity>> GetUsersByNamesASC ()
         {
-            List<UserEntity> users = context.Users.OrderBy(u => u.FirstName).ToList();
+            List<UserEntity> users = await context.Users.OrderBy(u => u.FirstName).ToListAsync();
             return users;
         }
 
         //Get users ordered by name (ascending & descending)
-        public List<UserEntity> GetUsersByNamesDESC()
+        public async Task<List<UserEntity>> GetUsersByNamesDESC()
         {
-            List<UserEntity> users = context.Users.OrderByDescending(u => u.FirstName).ToList();
+            List<UserEntity> users = await context.Users.OrderByDescending(u => u.FirstName).ToListAsync();
             return users;
         }
 
         //Get the average age of users
-        public double GetUsersAverageAge()
+        public async Task<double> GetUsersAverageAge()
         {
-            var average = context.Users.Average(x => (DateTime.Now.Year - x.DOB.Year));
+            var average = await  context.Users.AverageAsync(x => (DateTime.Now.Year - x.DOB.Year));
             return average; 
         }
 
         //Get the youngest user age
-        public int GetYoungestUserAge()
+        public async Task<int> GetYoungestUserAge()
         {
-            var Age = context.Users.Select(x => DateTime.Now.Year - x.DOB.Year).ToList();
+            var Age = await context.Users.Select(x => DateTime.Now.Year - x.DOB.Year).ToListAsync();
             return Age.Min();
         }
 
         //Get the oldest user age
-        public int GetOldestUserAge()
+        public async Task<int> GetOldestUserAge()
         {
-            var Age = context.Users.Select(x => DateTime.Now.Year - x.DOB.Year).ToList();
+            var Age = await context.Users.Select(x => DateTime.Now.Year - x.DOB.Year).ToListAsync();
             return Age.Max();
         }
     }

@@ -15,7 +15,7 @@ namespace RepositoryLayer.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
-                    Remainder = table.Column<DateTime>(nullable: false),
+                    Remainder = table.Column<DateTime>(nullable: true),
                     Colour = table.Column<string>(nullable: true),
                     IsArchived = table.Column<bool>(nullable: false),
                     IsPinned = table.Column<bool>(nullable: false),

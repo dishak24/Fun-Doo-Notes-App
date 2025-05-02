@@ -1,5 +1,6 @@
 ﻿using CommonLayer.Model;
 using ManagerLayer.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -19,8 +20,9 @@ using System.Threading.Tasks;
 
 namespace FunDooNotesApp.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    //[Route("[controller]")]
+    //[ApiController]
+    [Authorize]
     public class NotesController : ControllerBase
     {
         private readonly INotesManager notesManager;
@@ -39,66 +41,72 @@ namespace FunDooNotesApp.Controllers
             this.logger = logger;
          }
 
-            //API for Creating/adding new Note
-            [HttpPost]
-            [Route("AddNote")]
-            public IActionResult CreateNote(NotesModel notesModel)
+        //for create a note 
+        [HttpPost]
+        [Route("addNote")]
+        [Authorize]
+        public IActionResult CreateNote([FromBody] NotesModel notesModel)
+        {
+            try
             {
-                try
+                var userIdClaim = User.FindFirst("UserId");
+                if (userIdClaim == null)
                 {
-                //int userId = int.Parse(User.FindFirst("UserId").Value);
-
-                
-                /*
-                 * ----------To Retrieve UserId from the session-------------------
-                 * If UserId exists, its value is retrieved.
-                 * If UserId is null(not set in the session), userId is assigned 0
-                 */
-                    int userId = (int)HttpContext.Session.GetInt32("UserId");
-
-                    var note = notesManager.CreateNote(userId, notesModel);
-                    if (note != null)
+                    return Unauthorized(new ResponseModel<string>
                     {
-                        return Ok(new ResponseModel<NotesEntity>
-                        {
-                            Success = true,
-                            Message = "Done, Note Added successfully !",
-                            Data = note
-
-                        });
-                    }
-                    else
-                    {
-                        return BadRequest(new ResponseModel<string>
-                        {
-                            Success = true,
-                            Message = "Adding Notes Failed !!!!!"
-
-                        });
-                    }
-
+                        Success = false,
+                        Message = "UserId not found in token."
+                    });
                 }
-                catch (Exception e)
+
+                int userId = int.Parse(userIdClaim.Value);
+
+                var note = notesManager.CreateNote(userId, notesModel);
+                if (note != null)
                 {
-                    logger.LogError(e.ToString());
-                    throw e;
+                    return Ok(new ResponseModel<NotesEntity>
+                    {
+                        Success = true,
+                        Message = "Done, Note Added successfully !",
+                        Data = note
+                    });
+                }
+                else
+                {
+                    return BadRequest(new ResponseModel<string>
+                    {
+                        Success = false,
+                        Message = "Adding Notes Failed !!!!!"
+                    });
                 }
             }
+            catch (Exception e)
+            {
+                logger.LogError(e.ToString());
+                return StatusCode(500, new ResponseModel<string>
+                {
+                    Success = false,
+                    Message = "Internal Server Error: " + e.Message
+                });
+            }
+        }
 
         //Get all Notes API
         [HttpGet]
-        [Route("GetAllNotes")]
+        [Route("getAllNotes")]
+        [Authorize]
         public IActionResult GetAllNotes()
         {
             try
             {
                 int userId = int.Parse(User.FindFirst("UserId").Value);
                 List<NotesEntity> notes = notesManager.GetAllNotes(userId);
+               
                 if (notes == null)
                 {
                     return BadRequest(new ResponseModel<string>
                     {
-                        Success = true,
+                        Success = false,
                         Message = "Empty Notes !!!!!"
 
                     });
@@ -123,8 +131,9 @@ namespace FunDooNotesApp.Controllers
 
         //API : To Update Notes 
         [HttpPut]
-        [Route("UpdateNote/{noteId}")]
-        public IActionResult UpdateNote(int noteId, NotesModel model)
+        [Route("updateNote/{noteId}")]
+        [Authorize]
+        public IActionResult UpdateNote([FromRoute]int noteId, [FromBody]NotesModel model)
         {
             try
             {
@@ -144,7 +153,7 @@ namespace FunDooNotesApp.Controllers
                 {
                     return BadRequest(new ResponseModel<NotesEntity>
                     {
-                        Success = true,
+                        Success = false,
                         Message = " Note Upadation failed !!!!!  ",
                         Data = note
 
@@ -160,8 +169,9 @@ namespace FunDooNotesApp.Controllers
 
         //To Delete Note
         [HttpDelete]
-        [Route("DeleteNote/{noteId}")]
-        public IActionResult DeleteNote(int noteId)
+        [Route("deleteNote/{noteId}")]
+        [Authorize]
+        public IActionResult DeleteNote([FromRoute]int noteId)
         {
             try
             {
@@ -181,7 +191,7 @@ namespace FunDooNotesApp.Controllers
                 {
                     return BadRequest(new ResponseModel<bool>
                     {
-                        Success = true,
+                        Success = false,
                         Message = "Deletion Failed !!!! ",
                         Data = note
 
@@ -196,28 +206,28 @@ namespace FunDooNotesApp.Controllers
 
         //Fetch Notes using title
         [HttpGet]
-        [Route("GetNotesByTitle/{title}")]
-        public IActionResult GetNotesByTitle(string title)
+        [Route("GetNotesByTitleOrDescription/{searchText}")]
+        [Authorize]
+        public IActionResult GetNotesByTitleOrDescription(string searchText)
         {
             try
             {
-                List<NotesEntity> notes = notesManager.GetNotesByTitle(title);
-                if (notes == null)
+                List<NotesEntity> notes = notesManager.GetNotesByTitleOrDescription(searchText);
+                if (notes == null || notes.Count == 0)
                 {
                     return BadRequest(new ResponseModel<string>
                     {
-                        Success = true,
-                        Message = "Empty Notes !!!!!"
-
+                        Success = false,
+                        Message = "No matching notes found!"
                     });
                 }
                 else
                 {
-                    return Ok(new ResponseModel<List<NotesEntity>>                  {
+                    return Ok(new ResponseModel<List<NotesEntity>>
+                    {
                         Success = true,
-                        Message = "Getting Notes successfull. ",
+                        Message = "Notes fetched successfully.",
                         Data = notes
-
                     });
                 }
             }
@@ -239,7 +249,7 @@ namespace FunDooNotesApp.Controllers
                 {
                     return BadRequest(new ResponseModel<int>
                     {
-                        Success = true,
+                        Success = false,
                         Message = "Empty Notes !!!!!",
                         Data = count
 
@@ -285,7 +295,7 @@ namespace FunDooNotesApp.Controllers
                 {
                     return BadRequest(new ResponseModel<bool>
                     {
-                        Success = true,
+                        Success = false,
                         Message = "failed this Operation !!!!! ",
                         Data = result
 
@@ -301,8 +311,9 @@ namespace FunDooNotesApp.Controllers
 
         //To Archive note
         [HttpPut]
-        [Route("Archive/{noteId}")]
-        public IActionResult ArchiveNote(int noteId)
+        [Route("archive/{noteId}")]
+        [Authorize]
+        public IActionResult ArchiveNote([FromRoute] int noteId)
         {
             try
             {
@@ -322,7 +333,7 @@ namespace FunDooNotesApp.Controllers
                 {
                     return BadRequest(new ResponseModel<bool>
                     {
-                        Success = true,
+                        Success = false,
                         Message = "failed this Operation !!!!! ",
                         Data = result
 
@@ -337,8 +348,9 @@ namespace FunDooNotesApp.Controllers
 
         //To Trash note
         [HttpPut]
-        [Route("Trash/{noteId}")]
-        public IActionResult TrashNote(int noteId)
+        [Route("trash/{noteId}")]
+        [Authorize]
+        public IActionResult TrashNote([FromRoute]int noteId)
         {
             try
             {
@@ -358,7 +370,7 @@ namespace FunDooNotesApp.Controllers
                 {
                     return BadRequest(new ResponseModel<bool>
                     {
-                        Success = true,
+                        Success = false,
                         Message = "failed this Operation !!!!! ",
                         Data = result
 
@@ -373,13 +385,14 @@ namespace FunDooNotesApp.Controllers
 
         //To add colour to note
         [HttpPut]
-        [Route("AddColour/{noteId}")]
-        public IActionResult AddColourToNote(int noteId, string colour)
+        [Route("addColour/{noteId}")]
+        [Authorize]
+        public IActionResult AddColourToNote([FromRoute]int noteId, [FromBody]ColorModel model)
         {
             try
             {
                 var userId = int.Parse(User.FindFirst("UserId").Value);
-                var result = notesManager.AddColourToNote(noteId, colour,userId);
+                var result = notesManager.AddColourToNote(noteId, model.Colour, userId);
                 if (result)
                 {
                     return Ok(new ResponseModel<bool>
@@ -394,7 +407,7 @@ namespace FunDooNotesApp.Controllers
                 {
                     return BadRequest(new ResponseModel<bool>
                     {
-                        Success = true,
+                        Success = false,
                         Message = "failed this Operation !!!!! ",
                         Data = result
 
@@ -409,13 +422,14 @@ namespace FunDooNotesApp.Controllers
 
         //To add Remainder to note
         [HttpPut]
-        [Route("AddReaminder/{noteId}")]
-        public IActionResult AddRemainderToNote(int noteId, DateTime remainder)
+        [Route("addReminder/{noteId}")]
+        [Authorize]
+        public IActionResult AddRemainderToNote([FromRoute]int noteId, [FromBody]ReminderModel model)
         {
             try
             {
                 var userId = int.Parse(User.FindFirst("UserId").Value);
-                var result = notesManager.AddRemainderToNote(noteId, remainder, userId);
+                var result = notesManager.AddRemainderToNote(noteId, model.Reminder, userId);
                 if (result)
                 {
                     return Ok(new ResponseModel<bool>
@@ -430,7 +444,7 @@ namespace FunDooNotesApp.Controllers
                 {
                     return BadRequest(new ResponseModel<bool>
                     {
-                        Success = true,
+                        Success = false,
                         Message = "failed this Operation !!!!! ",
                         Data = result
 
@@ -467,7 +481,7 @@ namespace FunDooNotesApp.Controllers
                 {
                     return BadRequest(new ResponseModel<bool>
                     {
-                        Success = true,
+                        Success = false,
                         Message = "failed to add image !!!!!!",
                         Data = result
 

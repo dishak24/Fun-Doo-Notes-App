@@ -23,7 +23,7 @@ namespace RepositoryLayer.Interfaces
         public bool DeleteNote(int noteId, int userId);
 
         //Fetch Notes using title
-        public List<NotesEntity> GetNotesByTitle(string title);
+        public List<NotesEntity> GetNotesByTitleOrDescription(string searchText);
 
         //Return Count of notes a user has
         public int CountAllNotes();

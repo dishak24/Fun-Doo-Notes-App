@@ -14,6 +14,12 @@ namespace RepositoryLayer.Interfaces
         //To get all labels
         public Task<List<LabelEntity>> GetLabelsAsync(int userId);
 
+        // To update a label
+        Task<LabelEntity> UpdateLabelAsync(int userId, int labelId, string newLabelName);
+
+        // To delete a label
+        Task<bool> DeleteLabelAsync(int userId, int labelId);
+
         // Assign Label to a Note
         public Task<NoteLabelEntity> AssignLableAsync(int NoteId, int lableId);
 

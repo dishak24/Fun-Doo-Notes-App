@@ -14,7 +14,7 @@ namespace RepositoryLayer.Entity
         public int NotesId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public DateTime Remainder { get; set; }
+        public DateTime? Remainder { get; set; }
         public string Colour { get; set; }
         public string Image { get; set; }
         public bool IsArchived { get; set; }
@@ -32,5 +32,8 @@ namespace RepositoryLayer.Entity
 
         //Fot Many to many relation---adding later while creating Label
         public ICollection<NoteLabelEntity> NoteLabels { get; set; } = new List<NoteLabelEntity>();
+
+        public ICollection<CollaboratorsEntity> Collaborators { get; set; }
+
     }
 }

@@ -1,0 +1,778 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{26EED0CA-F3CF-428C-913B-8ADDD57CD887}|FunDooNotesApp\\FunDooNotesApp.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\fundoonotesapp\\controllers\\labelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26EED0CA-F3CF-428C-913B-8ADDD57CD887}|FunDooNotesApp\\FunDooNotesApp.csproj|solutionrelative:fundoonotesapp\\controllers\\labelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\repositorylayer\\services\\notesrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\services\\notesrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26EED0CA-F3CF-428C-913B-8ADDD57CD887}|FunDooNotesApp\\FunDooNotesApp.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\fundoonotesapp\\controllers\\notescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26EED0CA-F3CF-428C-913B-8ADDD57CD887}|FunDooNotesApp\\FunDooNotesApp.csproj|solutionrelative:fundoonotesapp\\controllers\\notescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\repositorylayer\\services\\labelrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\services\\labelrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\repositorylayer\\entity\\labelentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\entity\\labelentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6383AC08-D6F5-4A21-8B7C-9682F50BBEB8}|CommonLayer\\CommonLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\commonlayer\\model\\createlabelmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6383AC08-D6F5-4A21-8B7C-9682F50BBEB8}|CommonLayer\\CommonLayer.csproj|solutionrelative:commonlayer\\model\\createlabelmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C01FE7AE-F7CE-415B-B082-F2CCB6320CB2}|ManagerLayer\\ManagerLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\managerlayer\\services\\notesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C01FE7AE-F7CE-415B-B082-F2CCB6320CB2}|ManagerLayer\\ManagerLayer.csproj|solutionrelative:managerlayer\\services\\notesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C01FE7AE-F7CE-415B-B082-F2CCB6320CB2}|ManagerLayer\\ManagerLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\managerlayer\\interfaces\\inotesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C01FE7AE-F7CE-415B-B082-F2CCB6320CB2}|ManagerLayer\\ManagerLayer.csproj|solutionrelative:managerlayer\\interfaces\\inotesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\repositorylayer\\entity\\notesentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\entity\\notesentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\repositorylayer\\entity\\notelabelentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\entity\\notelabelentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\repositorylayer\\interfaces\\inotesrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\interfaces\\inotesrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6383AC08-D6F5-4A21-8B7C-9682F50BBEB8}|CommonLayer\\CommonLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\commonlayer\\model\\assignlabelmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6383AC08-D6F5-4A21-8B7C-9682F50BBEB8}|CommonLayer\\CommonLayer.csproj|solutionrelative:commonlayer\\model\\assignlabelmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26EED0CA-F3CF-428C-913B-8ADDD57CD887}|FunDooNotesApp\\FunDooNotesApp.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\fundoonotesapp\\controllers\\collaboratorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26EED0CA-F3CF-428C-913B-8ADDD57CD887}|FunDooNotesApp\\FunDooNotesApp.csproj|solutionrelative:fundoonotesapp\\controllers\\collaboratorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6383AC08-D6F5-4A21-8B7C-9682F50BBEB8}|CommonLayer\\CommonLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\commonlayer\\model\\collaboratormodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6383AC08-D6F5-4A21-8B7C-9682F50BBEB8}|CommonLayer\\CommonLayer.csproj|solutionrelative:commonlayer\\model\\collaboratormodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\repositorylayer\\migrations\\20250501191812_updatecascadedeletefornotelabels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\migrations\\20250501191812_updatecascadedeletefornotelabels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\repositorylayer\\context\\fundoodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\context\\fundoodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C01FE7AE-F7CE-415B-B082-F2CCB6320CB2}|ManagerLayer\\ManagerLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\managerlayer\\services\\labelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C01FE7AE-F7CE-415B-B082-F2CCB6320CB2}|ManagerLayer\\ManagerLayer.csproj|solutionrelative:managerlayer\\services\\labelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C01FE7AE-F7CE-415B-B082-F2CCB6320CB2}|ManagerLayer\\ManagerLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\managerlayer\\interfaces\\ilabelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C01FE7AE-F7CE-415B-B082-F2CCB6320CB2}|ManagerLayer\\ManagerLayer.csproj|solutionrelative:managerlayer\\interfaces\\ilabelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C01FE7AE-F7CE-415B-B082-F2CCB6320CB2}|ManagerLayer\\ManagerLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\managerlayer\\interfaces\\iusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C01FE7AE-F7CE-415B-B082-F2CCB6320CB2}|ManagerLayer\\ManagerLayer.csproj|solutionrelative:managerlayer\\interfaces\\iusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\repositorylayer\\interfaces\\ilabelrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\interfaces\\ilabelrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\repositorylayer\\migrations\\20250329095303_notes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\migrations\\20250329095303_notes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6383AC08-D6F5-4A21-8B7C-9682F50BBEB8}|CommonLayer\\CommonLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\commonlayer\\model\\notesmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6383AC08-D6F5-4A21-8B7C-9682F50BBEB8}|CommonLayer\\CommonLayer.csproj|solutionrelative:commonlayer\\model\\notesmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6383AC08-D6F5-4A21-8B7C-9682F50BBEB8}|CommonLayer\\CommonLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\commonlayer\\model\\remindermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6383AC08-D6F5-4A21-8B7C-9682F50BBEB8}|CommonLayer\\CommonLayer.csproj|solutionrelative:commonlayer\\model\\remindermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\repositorylayer\\migrations\\20250401091132_collaborators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\migrations\\20250401091132_collaborators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\repositorylayer\\migrations\\20250401091132_collaborators.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\migrations\\20250401091132_collaborators.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\repositorylayer\\entity\\collaboratorsentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\entity\\collaboratorsentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\repositorylayer\\migrations\\20250430071347_addcascadetocollaborators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\migrations\\20250430071347_addcascadetocollaborators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\repositorylayer\\migrations\\20250430061537_createcollaboratorswithcascade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\migrations\\20250430061537_createcollaboratorswithcascade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\repositorylayer\\migrations\\20250430060349_makeremaindernullable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\migrations\\20250430060349_makeremaindernullable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26EED0CA-F3CF-428C-913B-8ADDD57CD887}|FunDooNotesApp\\FunDooNotesApp.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\fundoonotesapp\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26EED0CA-F3CF-428C-913B-8ADDD57CD887}|FunDooNotesApp\\FunDooNotesApp.csproj|solutionrelative:fundoonotesapp\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\repositorylayer\\services\\userrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\services\\userrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26EED0CA-F3CF-428C-913B-8ADDD57CD887}|FunDooNotesApp\\FunDooNotesApp.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\fundoonotesapp\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26EED0CA-F3CF-428C-913B-8ADDD57CD887}|FunDooNotesApp\\FunDooNotesApp.csproj|solutionrelative:fundoonotesapp\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\repositorylayer\\entity\\userentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\entity\\userentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C01FE7AE-F7CE-415B-B082-F2CCB6320CB2}|ManagerLayer\\ManagerLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\managerlayer\\services\\usermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C01FE7AE-F7CE-415B-B082-F2CCB6320CB2}|ManagerLayer\\ManagerLayer.csproj|solutionrelative:managerlayer\\services\\usermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\repositorylayer\\interfaces\\iuserrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\interfaces\\iuserrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26EED0CA-F3CF-428C-913B-8ADDD57CD887}|FunDooNotesApp\\FunDooNotesApp.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\fundoonotesapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{26EED0CA-F3CF-428C-913B-8ADDD57CD887}|FunDooNotesApp\\FunDooNotesApp.csproj|solutionrelative:fundoonotesapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26EED0CA-F3CF-428C-913B-8ADDD57CD887}|FunDooNotesApp\\FunDooNotesApp.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\fundoonotesapp\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26EED0CA-F3CF-428C-913B-8ADDD57CD887}|FunDooNotesApp\\FunDooNotesApp.csproj|solutionrelative:fundoonotesapp\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26EED0CA-F3CF-428C-913B-8ADDD57CD887}|FunDooNotesApp\\FunDooNotesApp.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\fundoonotesapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26EED0CA-F3CF-428C-913B-8ADDD57CD887}|FunDooNotesApp\\FunDooNotesApp.csproj|solutionrelative:fundoonotesapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26EED0CA-F3CF-428C-913B-8ADDD57CD887}|FunDooNotesApp\\FunDooNotesApp.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\fundoonotesapp\\nlog.config||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{26EED0CA-F3CF-428C-913B-8ADDD57CD887}|FunDooNotesApp\\FunDooNotesApp.csproj|solutionrelative:fundoonotesapp\\nlog.config||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6383AC08-D6F5-4A21-8B7C-9682F50BBEB8}|CommonLayer\\CommonLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\commonlayer\\model\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6383AC08-D6F5-4A21-8B7C-9682F50BBEB8}|CommonLayer\\CommonLayer.csproj|solutionrelative:commonlayer\\model\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6383AC08-D6F5-4A21-8B7C-9682F50BBEB8}|CommonLayer\\CommonLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\commonlayer\\model\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6383AC08-D6F5-4A21-8B7C-9682F50BBEB8}|CommonLayer\\CommonLayer.csproj|solutionrelative:commonlayer\\model\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6383AC08-D6F5-4A21-8B7C-9682F50BBEB8}|CommonLayer\\CommonLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\commonlayer\\model\\resetpasswordmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6383AC08-D6F5-4A21-8B7C-9682F50BBEB8}|CommonLayer\\CommonLayer.csproj|solutionrelative:commonlayer\\model\\resetpasswordmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6383AC08-D6F5-4A21-8B7C-9682F50BBEB8}|CommonLayer\\CommonLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\commonlayer\\model\\forgotpasswordmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6383AC08-D6F5-4A21-8B7C-9682F50BBEB8}|CommonLayer\\CommonLayer.csproj|solutionrelative:commonlayer\\model\\forgotpasswordmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C01FE7AE-F7CE-415B-B082-F2CCB6320CB2}|ManagerLayer\\ManagerLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\managerlayer\\interfaces\\icollaboratorsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C01FE7AE-F7CE-415B-B082-F2CCB6320CB2}|ManagerLayer\\ManagerLayer.csproj|solutionrelative:managerlayer\\interfaces\\icollaboratorsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C01FE7AE-F7CE-415B-B082-F2CCB6320CB2}|ManagerLayer\\ManagerLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\managerlayer\\services\\collaboratorsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C01FE7AE-F7CE-415B-B082-F2CCB6320CB2}|ManagerLayer\\ManagerLayer.csproj|solutionrelative:managerlayer\\services\\collaboratorsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\repositorylayer\\interfaces\\icollaboratorsrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C7A2C86-B2C2-4F2A-B868-5C3AD8EAC8AA}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\interfaces\\icollaboratorsrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26EED0CA-F3CF-428C-913B-8ADDD57CD887}|FunDooNotesApp\\FunDooNotesApp.csproj|e:\\bl\\training\\project\\backend\\fundoonotesapp\\fundoonotesapp\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{26EED0CA-F3CF-428C-913B-8ADDD57CD887}|FunDooNotesApp\\FunDooNotesApp.csproj|solutionrelative:fundoonotesapp\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NotesController.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\FunDooNotesApp\\Controllers\\NotesController.cs",
+              "RelativeDocumentMoniker": "FunDooNotesApp\\Controllers\\NotesController.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\FunDooNotesApp\\Controllers\\NotesController.cs",
+              "RelativeToolTip": "FunDooNotesApp\\Controllers\\NotesController.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAIwIEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T11:38:06.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LabelController.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\FunDooNotesApp\\Controllers\\LabelController.cs",
+              "RelativeDocumentMoniker": "FunDooNotesApp\\Controllers\\LabelController.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\FunDooNotesApp\\Controllers\\LabelController.cs",
+              "RelativeToolTip": "FunDooNotesApp\\Controllers\\LabelController.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAcwGAAAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T01:08:32.547Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LabelEntity.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Entity\\LabelEntity.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Entity\\LabelEntity.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Entity\\LabelEntity.cs",
+              "RelativeToolTip": "RepositoryLayer\\Entity\\LabelEntity.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAUwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T18:34:33.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LabelRepo.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Services\\LabelRepo.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Services\\LabelRepo.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Services\\LabelRepo.cs",
+              "RelativeToolTip": "RepositoryLayer\\Services\\LabelRepo.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T00:28:55.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "INotesRepo.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Interfaces\\INotesRepo.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Interfaces\\INotesRepo.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Interfaces\\INotesRepo.cs",
+              "RelativeToolTip": "RepositoryLayer\\Interfaces\\INotesRepo.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAowBkAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T13:44:56.821Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NotesRepo.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Services\\NotesRepo.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Services\\NotesRepo.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Services\\NotesRepo.cs",
+              "RelativeToolTip": "RepositoryLayer\\Services\\NotesRepo.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAA2wDYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T06:14:57.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CreateLabelModel.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\CommonLayer\\Model\\CreateLabelModel.cs",
+              "RelativeDocumentMoniker": "CommonLayer\\Model\\CreateLabelModel.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\CommonLayer\\Model\\CreateLabelModel.cs",
+              "RelativeToolTip": "CommonLayer\\Model\\CreateLabelModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T00:19:40.864Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NotesManager.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\ManagerLayer\\Services\\NotesManager.cs",
+              "RelativeDocumentMoniker": "ManagerLayer\\Services\\NotesManager.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\ManagerLayer\\Services\\NotesManager.cs",
+              "RelativeToolTip": "ManagerLayer\\Services\\NotesManager.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAkwC8AAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T13:45:51.792Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "NotesEntity.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Entity\\NotesEntity.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Entity\\NotesEntity.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Entity\\NotesEntity.cs",
+              "RelativeToolTip": "RepositoryLayer\\Entity\\NotesEntity.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAswBIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T07:29:45.254Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "NoteLabelEntity.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Entity\\NoteLabelEntity.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Entity\\NoteLabelEntity.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Entity\\NoteLabelEntity.cs",
+              "RelativeToolTip": "RepositoryLayer\\Entity\\NoteLabelEntity.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T18:41:04.695Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "INotesManager.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\ManagerLayer\\Interfaces\\INotesManager.cs",
+              "RelativeDocumentMoniker": "ManagerLayer\\Interfaces\\INotesManager.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\ManagerLayer\\Interfaces\\INotesManager.cs",
+              "RelativeToolTip": "ManagerLayer\\Interfaces\\INotesManager.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAD4vxgAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T08:12:03.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AssignLabelModel.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\CommonLayer\\Model\\AssignLabelModel.cs",
+              "RelativeDocumentMoniker": "CommonLayer\\Model\\AssignLabelModel.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\CommonLayer\\Model\\AssignLabelModel.cs",
+              "RelativeToolTip": "CommonLayer\\Model\\AssignLabelModel.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T10:11:54.658Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CollaboratorsController.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\FunDooNotesApp\\Controllers\\CollaboratorsController.cs",
+              "RelativeDocumentMoniker": "FunDooNotesApp\\Controllers\\CollaboratorsController.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\FunDooNotesApp\\Controllers\\CollaboratorsController.cs",
+              "RelativeToolTip": "FunDooNotesApp\\Controllers\\CollaboratorsController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAxwAsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T09:48:29.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CollaboratorModel.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\CommonLayer\\Model\\CollaboratorModel.cs",
+              "RelativeDocumentMoniker": "CommonLayer\\Model\\CollaboratorModel.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\CommonLayer\\Model\\CollaboratorModel.cs",
+              "RelativeToolTip": "CommonLayer\\Model\\CollaboratorModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T07:55:10.797Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "LabelManager.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\ManagerLayer\\Services\\LabelManager.cs",
+              "RelativeDocumentMoniker": "ManagerLayer\\Services\\LabelManager.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\ManagerLayer\\Services\\LabelManager.cs",
+              "RelativeToolTip": "ManagerLayer\\Services\\LabelManager.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAjwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T00:27:52.124Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "20250501191812_UpdateCascadeDeleteForNoteLabels.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Migrations\\20250501191812_UpdateCascadeDeleteForNoteLabels.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Migrations\\20250501191812_UpdateCascadeDeleteForNoteLabels.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Migrations\\20250501191812_UpdateCascadeDeleteForNoteLabels.cs",
+              "RelativeToolTip": "RepositoryLayer\\Migrations\\20250501191812_UpdateCascadeDeleteForNoteLabels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T19:18:13.44Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "FundooDBContext.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Context\\FundooDBContext.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Context\\FundooDBContext.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Context\\FundooDBContext.cs",
+              "RelativeToolTip": "RepositoryLayer\\Context\\FundooDBContext.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAUwDEAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T07:04:40.049Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ILabelManager.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\ManagerLayer\\Interfaces\\ILabelManager.cs",
+              "RelativeDocumentMoniker": "ManagerLayer\\Interfaces\\ILabelManager.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\ManagerLayer\\Interfaces\\ILabelManager.cs",
+              "RelativeToolTip": "ManagerLayer\\Interfaces\\ILabelManager.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T00:25:55.966Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IUserManager.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\ManagerLayer\\Interfaces\\IUserManager.cs",
+              "RelativeDocumentMoniker": "ManagerLayer\\Interfaces\\IUserManager.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\ManagerLayer\\Interfaces\\IUserManager.cs",
+              "RelativeToolTip": "ManagerLayer\\Interfaces\\IUserManager.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAkwDQAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T05:49:32.269Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ILabelRepo.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Interfaces\\ILabelRepo.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Interfaces\\ILabelRepo.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Interfaces\\ILabelRepo.cs",
+              "RelativeToolTip": "RepositoryLayer\\Interfaces\\ILabelRepo.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBQAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T00:28:36.45Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ReminderModel.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\CommonLayer\\Model\\ReminderModel.cs",
+              "RelativeDocumentMoniker": "CommonLayer\\Model\\ReminderModel.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\CommonLayer\\Model\\ReminderModel.cs",
+              "RelativeToolTip": "CommonLayer\\Model\\ReminderModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T20:44:26.54Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "20250329095303_Notes.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Migrations\\20250329095303_Notes.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Migrations\\20250329095303_Notes.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Migrations\\20250329095303_Notes.cs",
+              "RelativeToolTip": "RepositoryLayer\\Migrations\\20250329095303_Notes.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAsAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T05:57:16.981Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "NotesModel.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\CommonLayer\\Model\\NotesModel.cs",
+              "RelativeDocumentMoniker": "CommonLayer\\Model\\NotesModel.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\CommonLayer\\Model\\NotesModel.cs",
+              "RelativeToolTip": "CommonLayer\\Model\\NotesModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T10:06:27.89Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "20250401091132_Collaborators.Designer.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Migrations\\20250401091132_Collaborators.Designer.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Migrations\\20250401091132_Collaborators.Designer.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Migrations\\20250401091132_Collaborators.Designer.cs",
+              "RelativeToolTip": "RepositoryLayer\\Migrations\\20250401091132_Collaborators.Designer.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAIQAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T06:40:14.416Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "20250401091132_Collaborators.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Migrations\\20250401091132_Collaborators.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Migrations\\20250401091132_Collaborators.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Migrations\\20250401091132_Collaborators.cs",
+              "RelativeToolTip": "RepositoryLayer\\Migrations\\20250401091132_Collaborators.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAgwC4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T06:10:21.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "CollaboratorsEntity.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Entity\\CollaboratorsEntity.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Entity\\CollaboratorsEntity.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Entity\\CollaboratorsEntity.cs",
+              "RelativeToolTip": "RepositoryLayer\\Entity\\CollaboratorsEntity.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAwCIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T09:49:49.711Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "20250430071347_AddCascadeToCollaborators.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Migrations\\20250430071347_AddCascadeToCollaborators.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Migrations\\20250430071347_AddCascadeToCollaborators.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Migrations\\20250430071347_AddCascadeToCollaborators.cs",
+              "RelativeToolTip": "RepositoryLayer\\Migrations\\20250430071347_AddCascadeToCollaborators.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T07:13:48.242Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "20250430061537_CreateCollaboratorsWithCascade.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Migrations\\20250430061537_CreateCollaboratorsWithCascade.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Migrations\\20250430061537_CreateCollaboratorsWithCascade.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Migrations\\20250430061537_CreateCollaboratorsWithCascade.cs",
+              "RelativeToolTip": "RepositoryLayer\\Migrations\\20250430061537_CreateCollaboratorsWithCascade.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T06:15:38.105Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "20250430060349_MakeRemainderNullable.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Migrations\\20250430060349_MakeRemainderNullable.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Migrations\\20250430060349_MakeRemainderNullable.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Migrations\\20250430060349_MakeRemainderNullable.cs",
+              "RelativeToolTip": "RepositoryLayer\\Migrations\\20250430060349_MakeRemainderNullable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T06:03:51.295Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\FunDooNotesApp\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "FunDooNotesApp\\Controllers\\UsersController.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\FunDooNotesApp\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "FunDooNotesApp\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAABMCAAAAAAAAAAAAAPEBAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T10:09:23.337Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "UserEntity.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Entity\\UserEntity.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Entity\\UserEntity.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Entity\\UserEntity.cs",
+              "RelativeToolTip": "RepositoryLayer\\Entity\\UserEntity.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA+wBIAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T16:51:18.364Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "UserRepo.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Services\\UserRepo.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Services\\UserRepo.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Services\\UserRepo.cs",
+              "RelativeToolTip": "RepositoryLayer\\Services\\UserRepo.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAgwGIAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T12:00:22.307Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\FunDooNotesApp\\Startup.cs",
+              "RelativeDocumentMoniker": "FunDooNotesApp\\Startup.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\FunDooNotesApp\\Startup.cs",
+              "RelativeToolTip": "FunDooNotesApp\\Startup.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAGUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T09:42:23.816Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "UserManager.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\ManagerLayer\\Services\\UserManager.cs",
+              "RelativeDocumentMoniker": "ManagerLayer\\Services\\UserManager.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\ManagerLayer\\Services\\UserManager.cs",
+              "RelativeToolTip": "ManagerLayer\\Services\\UserManager.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAcwGgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T05:49:42.66Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "IUserRepo.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Interfaces\\IUserRepo.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Interfaces\\IUserRepo.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Interfaces\\IUserRepo.cs",
+              "RelativeToolTip": "RepositoryLayer\\Interfaces\\IUserRepo.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAswDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T12:02:25.693Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\FunDooNotesApp\\appsettings.json",
+              "RelativeDocumentMoniker": "FunDooNotesApp\\appsettings.json",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\FunDooNotesApp\\appsettings.json",
+              "RelativeToolTip": "FunDooNotesApp\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-03T15:21:12.964Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "RegisterModel.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\CommonLayer\\Model\\RegisterModel.cs",
+              "RelativeDocumentMoniker": "CommonLayer\\Model\\RegisterModel.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\CommonLayer\\Model\\RegisterModel.cs",
+              "RelativeToolTip": "CommonLayer\\Model\\RegisterModel.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwBwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-04T06:50:31.361Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\FunDooNotesApp\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "FunDooNotesApp\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\FunDooNotesApp\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "FunDooNotesApp\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T04:55:45.961Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\FunDooNotesApp\\Program.cs",
+              "RelativeDocumentMoniker": "FunDooNotesApp\\Program.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\FunDooNotesApp\\Program.cs",
+              "RelativeToolTip": "FunDooNotesApp\\Program.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAuwBwAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-04T07:54:28.035Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "NLog.config",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\FunDooNotesApp\\NLog.config",
+              "RelativeDocumentMoniker": "FunDooNotesApp\\NLog.config",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\FunDooNotesApp\\NLog.config",
+              "RelativeToolTip": "FunDooNotesApp\\NLog.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-04-04T08:08:08.85Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "LoginModel.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\CommonLayer\\Model\\LoginModel.cs",
+              "RelativeDocumentMoniker": "CommonLayer\\Model\\LoginModel.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\CommonLayer\\Model\\LoginModel.cs",
+              "RelativeToolTip": "CommonLayer\\Model\\LoginModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T06:57:01.293Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "ResetPasswordModel.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\CommonLayer\\Model\\ResetPasswordModel.cs",
+              "RelativeDocumentMoniker": "CommonLayer\\Model\\ResetPasswordModel.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\CommonLayer\\Model\\ResetPasswordModel.cs",
+              "RelativeToolTip": "CommonLayer\\Model\\ResetPasswordModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T10:09:19.288Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "ForgotPasswordModel.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\CommonLayer\\Model\\ForgotPasswordModel.cs",
+              "RelativeDocumentMoniker": "CommonLayer\\Model\\ForgotPasswordModel.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\CommonLayer\\Model\\ForgotPasswordModel.cs",
+              "RelativeToolTip": "CommonLayer\\Model\\ForgotPasswordModel.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwA0AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T08:31:24.536Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "ICollaboratorsManager.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\ManagerLayer\\Interfaces\\ICollaboratorsManager.cs",
+              "RelativeDocumentMoniker": "ManagerLayer\\Interfaces\\ICollaboratorsManager.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\ManagerLayer\\Interfaces\\ICollaboratorsManager.cs",
+              "RelativeToolTip": "ManagerLayer\\Interfaces\\ICollaboratorsManager.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAiwBAAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T09:41:20.367Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "CollaboratorsManager.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\ManagerLayer\\Services\\CollaboratorsManager.cs",
+              "RelativeDocumentMoniker": "ManagerLayer\\Services\\CollaboratorsManager.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\ManagerLayer\\Services\\CollaboratorsManager.cs",
+              "RelativeToolTip": "ManagerLayer\\Services\\CollaboratorsManager.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAcwCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T09:41:51.712Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "ICollaboratorsRepo.cs",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Interfaces\\ICollaboratorsRepo.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Interfaces\\ICollaboratorsRepo.cs",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\RepositoryLayer\\Interfaces\\ICollaboratorsRepo.cs",
+              "RelativeToolTip": "RepositoryLayer\\Interfaces\\ICollaboratorsRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBAAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T09:39:42.042Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\FunDooNotesApp\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "FunDooNotesApp\\Properties\\launchSettings.json",
+              "ToolTip": "E:\\BL\\Training\\Project\\Backend\\FunDooNotesApp\\FunDooNotesApp\\Properties\\launchSettings.json",
+              "RelativeToolTip": "FunDooNotesApp\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAACBjwAoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-29T07:35:09.846Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

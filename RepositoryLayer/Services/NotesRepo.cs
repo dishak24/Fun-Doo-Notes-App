@@ -2,6 +2,7 @@
 using CloudinaryDotNet.Actions;
 using CommonLayer.Model;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using RepositoryLayer.Context;
 using RepositoryLayer.Entity;
@@ -33,6 +34,7 @@ namespace RepositoryLayer.Services
 
             notes.Title = notesModel.Title;
             notes.Description = notesModel.Description;
+            notes.Colour = notesModel.Colour;
 
             //adding values in DB
             context.Add(notes);
@@ -45,8 +47,11 @@ namespace RepositoryLayer.Services
         {
             //var note = context.Notes.FirstOrDefault(n => n.UserId == UserId);
 
-            List<NotesEntity> allNotes = context.Notes.Where( x => x.UserId == UserId).ToList();
-            return allNotes;
+            return context.Notes
+                                .Where(n => n.UserId == UserId)
+                                .Include(n => n.NoteLabels)                // Include join table
+                                .ThenInclude(nl => nl.Label)               // Include actual label data
+                                .ToList();
         }
 
         //Update Note
@@ -85,10 +90,11 @@ namespace RepositoryLayer.Services
         }
 
         //Fetch Notes using title
-        public List<NotesEntity> GetNotesByTitle(string title)
+        public List<NotesEntity> GetNotesByTitleOrDescription(string searchText)
         {
-            List<NotesEntity> notes = context.Notes.Where( n => n.Title == title).ToList();
-            return notes;
+            return context.Notes
+                .Where(note => note.Title.Contains(searchText) || note.Description.Contains(searchText))
+                .ToList();
         }
 
         //Return Count of notes a user has

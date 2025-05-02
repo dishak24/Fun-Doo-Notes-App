@@ -71,6 +71,44 @@ namespace RepositoryLayer.Services
             }
         }
 
+        public async Task<LabelEntity> UpdateLabelAsync(int userId, int labelId, string newLabelName)
+        {
+            var label = await context.Labels
+                .FirstOrDefaultAsync(l => l.LabelId == labelId && l.UserId == userId);
+
+            if (label != null)
+            {
+                label.LabelName = newLabelName;
+                await context.SaveChangesAsync();
+                return label;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
+        //delete label
+        public async Task<bool> DeleteLabelAsync(int userId, int labelId)
+        {
+            var label = await context.Labels
+                .FirstOrDefaultAsync(l => l.LabelId == labelId && l.UserId == userId);
+
+            if (label != null)
+            {
+                context.Labels.Remove(label);
+                await context.SaveChangesAsync();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+
 
         //To Remove label from Note
         public async Task<bool> RemoveLabelFromNoteAsync(int noteId, int labelId)
@@ -87,5 +125,8 @@ namespace RepositoryLayer.Services
                 return false;
             }
         }
+
+
+
     }
 }

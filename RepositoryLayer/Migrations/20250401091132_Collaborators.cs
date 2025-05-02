@@ -24,13 +24,15 @@ namespace RepositoryLayer.Migrations
                         column: x => x.NoteId,
                         principalTable: "Notes",
                         principalColumn: "NotesId",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade
+);
                     table.ForeignKey(
                         name: "FK_Collaborators_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "UserId",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade
+);
                 });
 
             migrationBuilder.CreateIndex(

@@ -18,8 +18,8 @@ using Microsoft.Extensions.Logging;
 
 namespace FunDooNotesApp.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    //[Route("api/[controller]")]
+    //[ApiController]
     public class UsersController : ControllerBase
     {
         private readonly IUserManager userManager;
@@ -44,11 +44,15 @@ namespace FunDooNotesApp.Controllers
         }
 
         [HttpPost]
-        [Route("Register")]
-        public IActionResult Register(RegisterModel model)
+        [Route("register")]
+        public async Task<IActionResult> RegisterAsync([FromBody] RegisterModel model)
         {
+            if (model == null)
+            {
+                return BadRequest("Model is null");
+            }
             //adding code to checking email already used or not
-            var check = userManager.CheckEmailExist(model.Email);
+            var check = await userManager.CheckEmailExist(model.Email);
             
             if (check)
             {
@@ -60,10 +64,10 @@ namespace FunDooNotesApp.Controllers
             }
             else
             {
-                var result = userManager.Register(model);
+                var result = await userManager.Register(model);
 
                 //This stores (result.UserId) in the session under the key "UserId"
-               HttpContext.Session.SetInt32("UserId", result.UserId );
+              // HttpContext.Session.SetInt32("UserId", result.UserId );
 
                 if (result != null)
                 {
@@ -85,10 +89,10 @@ namespace FunDooNotesApp.Controllers
 
         //login api
         [HttpPost]
-        [Route("Login")]
-        public IActionResult Login(LoginModel loginModel)
+        [Route("login")]
+        public async Task<IActionResult> LoginAsync([FromBody] LoginModel loginModel)
         {
-            var result = userManager.Login(loginModel);
+            var result = await userManager.Login(loginModel);
             if (result != null)
             {
                 return Ok(new ResponseModel<string>
@@ -112,14 +116,14 @@ namespace FunDooNotesApp.Controllers
         //Forgot password API
         [HttpPost]
         [Route("ForgotPassword")]
-        public async Task<IActionResult> ForgotPassword(string email)
+        public async Task<IActionResult> ForgotPasswordAsync(string email)
         {
             try
             {
-                if (userManager.CheckEmailExist(email))
+                if (await userManager.CheckEmailExist(email))
                 {
                     Send send = new Send();
-                    ForgotPasswordModel forgotPasswordModel = userManager.ForgotPassword(email);
+                    ForgotPasswordModel forgotPasswordModel = await userManager.ForgotPassword(email);
                     send.SendingMail(forgotPasswordModel.Email, forgotPasswordModel.Token);
                     Uri uri = new Uri("rabbitmq://localhost/FunDooNotes_EmailQueue");
                     var endPoint = await bus.GetSendEndpoint(uri);
@@ -137,7 +141,7 @@ namespace FunDooNotesApp.Controllers
                 {
                     return BadRequest(new ResponseModel<string>
                     {
-                        Success = true,
+                        Success = false,
                         Message = "Sending email failed !!!!!"
 
                     });
@@ -154,12 +158,12 @@ namespace FunDooNotesApp.Controllers
         [Authorize]
         [HttpPost]
         [Route("ResetPassword")]
-        public IActionResult ResetPassword(ResetPasswordModel model)
+        public async Task<IActionResult> ResetPasswordAsync(ResetPasswordModel model)
         {
             try
             {
                 string email = User.FindFirst("EmailId").Value;
-                if (userManager.ResetPassword(email, model))
+                if (await userManager.ResetPassword(email, model))
                 {
                     return Ok(new ResponseModel<string>
                     {
@@ -172,7 +176,7 @@ namespace FunDooNotesApp.Controllers
                 {
                     return BadRequest(new ResponseModel<string>
                     {
-                        Success = true,
+                        Success = false,
                         Message = "Reseting Password Failed !!!!!"
 
                     });
@@ -188,16 +192,16 @@ namespace FunDooNotesApp.Controllers
         //To get all Users
         [HttpGet]
         [Route("AllUsers")]
-        public IActionResult GetAllUsers()
+        public async Task<IActionResult> GetAllUsersAsync()
         {
             try
             {
-                List<UserEntity> userList = userManager.GetAllUsers();
+                List<UserEntity> userList = await userManager.GetAllUsers();
                 if ( userList == null)
                 {
                     return BadRequest(new ResponseModel<string>
                     {
-                        Success = true,
+                        Success = false,
                         Message = " No User available in Database !!!!!"
 
                     });
@@ -222,17 +226,17 @@ namespace FunDooNotesApp.Controllers
         //Find a user by ID
         [HttpGet]
         [Route("GetUserById/{userId}")]
-        public IActionResult GetUserById(int userId)
+        public async Task<IActionResult> GetUserByIdAsync(int userId)
         {
             try
             {
-                var user = userManager.GetUserById(userId);
+                var user = await userManager.GetUserById(userId);
 
                 if (user == null)
                 {
                     return BadRequest(new ResponseModel<string>
                     {
-                        Success = true,
+                        Success = false,
                         Message = " This UserId does not exist !!!!!"
 
                     });
@@ -258,17 +262,17 @@ namespace FunDooNotesApp.Controllers
         //Get users whose name starts with 'A'
         [HttpGet]
         [Route("GetNameStarsWith/{letter}")]
-        public IActionResult GetUsersNameStartsWithLetter(string letter)
+        public async Task<IActionResult> GetUsersNameStartsWithLetterAsync(string letter)
         {
             try
             {
-                List<UserEntity> users = userManager.GetUsersNameStartsWithLetter(letter);
+                List<UserEntity> users = await userManager.GetUsersNameStartsWithLetter(letter);
 
                 if (users == null)
                 {
                     return BadRequest(new ResponseModel<string>
                     {
-                        Success = true,
+                        Success = false,
                         Message = " Such Users not exist !!!!!"
 
                     });
@@ -294,17 +298,17 @@ namespace FunDooNotesApp.Controllers
         //Count the total number of users
         [HttpGet]
         [Route("GetUserCount")]
-        public IActionResult CountUsers()
+        public async Task<IActionResult> CountUsersAsync()
         {
             try
             {
-                var count = userManager.CountUsers();
+                var count = await userManager.CountUsers();
 
                 if (count == null)
                 {
                     return BadRequest(new ResponseModel<int>
                     {
-                        Success = true,
+                        Success = false,
                         Message = " Empty User Database !!!!!! ",
                         Data = count
 
@@ -332,16 +336,16 @@ namespace FunDooNotesApp.Controllers
         //Get users ordered by name (ascending)
         [HttpGet]
         [Route("GetUsersOrderByNames_ASC")]
-        public IActionResult GetUsersByNamesASC()
+        public async Task<IActionResult> GetUsersByNamesAscAsync()
         {
-            List<UserEntity> users = userManager.GetUsersByNamesASC();
+            List<UserEntity> users = await userManager.GetUsersByNamesASC();
             try
             {
                 if (users == null)
                 {
                     return BadRequest(new ResponseModel<List<UserEntity>>
                     {
-                        Success = true,
+                        Success = false,
                         Message = " Empty Users !!!!!",
                         Data = users
 
@@ -369,16 +373,16 @@ namespace FunDooNotesApp.Controllers
         //Get users ordered by name (descending)
         [HttpGet]
         [Route("GetUsersOrderByNames_DESC")]
-        public IActionResult GetUsersByNamesDESC()
+        public async Task<IActionResult> GetUsersByNamesDescAsync()
         {
-            List<UserEntity> users = userManager.GetUsersByNamesDESC();
+            List<UserEntity> users = await userManager.GetUsersByNamesDESC();
             try
             {
                 if (users == null)
                 {
                     return BadRequest(new ResponseModel<List<UserEntity>>
                     {
-                        Success = true,
+                        Success = false,
                         Message = " Empty Users !!!!!",
                         Data = users
 
@@ -406,17 +410,17 @@ namespace FunDooNotesApp.Controllers
         [HttpGet]
         [Route("GetUsersAverageAge")]
        
-        public IActionResult GetUsersAverageAge()
+        public async Task<IActionResult> GetUsersAverageAgeAsync()
         {
             try
             {
-                var avgAge = userManager.GetUsersAverageAge();
+                var avgAge = await userManager.GetUsersAverageAge();
 
                 if (avgAge == null)
                 {
                     return BadRequest(new ResponseModel<double>
                     {
-                        Success = true,
+                        Success = false,
                         Message = " No Data to Calculate Average !!!!!! ",
                         Data = avgAge
 
@@ -444,17 +448,17 @@ namespace FunDooNotesApp.Controllers
         //Get the youngest user age
         [HttpGet]
         [Route("GetYoungestUserAge")]
-        public IActionResult GetYoungestUserAge()
+        public async Task<IActionResult> GetYoungestUserAgeAsync()
         {
             try
             {
-                var age = userManager.GetYoungestUserAge();
+                var age = await userManager.GetYoungestUserAge();
 
                 if (age == null)
                 {
                     return BadRequest(new ResponseModel<int>
                     {
-                        Success = true,
+                        Success = false,
                         Message = " Empty User Database !!!!!! ",
                         Data = age
 
@@ -481,17 +485,17 @@ namespace FunDooNotesApp.Controllers
         //Get the oldest user age
         [HttpGet]
         [Route("GetOldestUserAge")]
-        public IActionResult GetOldestUserAge()
+        public async Task<IActionResult> GetOldestUserAgeAsync()
         {
             try
             {
-                var age = userManager.GetOldestUserAge();
+                var age = await userManager.GetOldestUserAge();
 
                 if (age == null)
                 {
                     return BadRequest(new ResponseModel<int>
                     {
-                        Success = true,
+                        Success = false,
                         Message = " Empty User Database !!!!!! ",
                         Data = age
 
@@ -519,7 +523,7 @@ namespace FunDooNotesApp.Controllers
         //Radis cache
         [HttpGet]
         [Route("GetAllUsers-RedisCache")]
-        public async Task<IActionResult> GetAllNotesUsingRedisCache()
+        public async Task<IActionResult> GetAllNotesUsingRedisCacheAsync()
         {
             var CacheKey = "UserList";
             string SerializedNoteList;

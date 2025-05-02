@@ -1,0 +1,472 @@
+2025-04-21 16:13:57.7954 DEBUG Hosting starting
+2025-04-21 16:13:57.8800 INFO User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-21 16:13:58.7183 DEBUG Reading data from file 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys\key-5197d4a9-0d4c-42a7-8010-94bf83067101.xml'.
+2025-04-21 16:13:58.7473 DEBUG Reading data from file 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys\key-6d8de507-ea8a-4bec-95d6-eb4cdb31ff29.xml'.
+2025-04-21 16:13:58.7792 DEBUG Found key {5197d4a9-0d4c-42a7-8010-94bf83067101}.
+2025-04-21 16:13:58.7792 DEBUG Found key {6d8de507-ea8a-4bec-95d6-eb4cdb31ff29}.
+2025-04-21 16:13:58.7929 DEBUG Considering key {6d8de507-ea8a-4bec-95d6-eb4cdb31ff29} with expiration date 2025-06-25 18:18:06Z as default key.
+2025-04-21 16:13:58.8505 DEBUG Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-04-21 16:13:58.8651 DEBUG Decrypting secret element using Windows DPAPI.
+2025-04-21 16:13:58.8677 DEBUG Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-04-21 16:13:58.8677 DEBUG Opening CNG algorithm 'AES' from provider '(null)' with chaining mode CBC.
+2025-04-21 16:13:58.8677 DEBUG Opening CNG algorithm 'SHA256' from provider '(null)' with HMAC.
+2025-04-21 16:13:58.8677 DEBUG Using key {6d8de507-ea8a-4bec-95d6-eb4cdb31ff29} as the default key.
+2025-04-21 16:13:58.8828 DEBUG Key ring with default key {6d8de507-ea8a-4bec-95d6-eb4cdb31ff29} was loaded during application startup.
+2025-04-21 16:13:58.8828 DEBUG Starting host: rabbitmq://localhost/
+2025-04-21 16:13:58.9682 DEBUG Connect: guest@localhost:5672/
+2025-04-21 16:13:59.5130 DEBUG Connected: guest@localhost:5672/ (address: amqp://localhost:5672, local: 54498)
+2025-04-21 16:13:59.7222 DEBUG Loaded hosting startup assembly FunDooNotesApp
+2025-04-21 16:13:59.7222 DEBUG Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-04-21 16:13:59.7222 DEBUG Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-04-21 16:13:59.7222 INFO Application started. Press Ctrl+C to shut down.
+2025-04-21 16:13:59.7222 INFO Hosting environment: Development
+2025-04-21 16:13:59.7222 INFO Content root path: E:\BL\Training\Project\Backend\FunDooNotesApp\FunDooNotesApp
+2025-04-21 16:13:59.7222 DEBUG Hosting started
+2025-04-21 16:13:59.7730 INFO Request starting HTTP/2.0 GET https://localhost:44326/swagger/index.html  
+2025-04-21 16:14:00.4508 DEBUG Wildcard detected, all requests with hosts will be allowed.
+2025-04-21 16:14:00.4508 TRACE All hosts are allowed.
+2025-04-21 16:14:01.2096 DEBUG AuthenticationScheme: Bearer was not authenticated.
+2025-04-21 16:14:01.2636 DEBUG Response markup is scheduled to include Browser Link script injection.
+2025-04-21 16:14:01.2636 DEBUG Response markup is scheduled to include browser refresh script injection.
+2025-04-21 16:14:01.3084 DEBUG Response markup was updated to include Browser Link script injection.
+2025-04-21 16:14:01.3084 DEBUG Response markup was updated to include browser refresh script injection.
+2025-04-21 16:14:01.3084 INFO Request finished in 1541.2832ms 200 text/html;charset=utf-8
+2025-04-21 16:14:01.3323 INFO Request starting HTTP/2.0 GET https://localhost:44326/_vs/browserLink  
+2025-04-21 16:14:01.3323 INFO Request starting HTTP/2.0 GET https://localhost:44326/_framework/aspnetcore-browser-refresh.js  
+2025-04-21 16:14:01.3409 INFO Request finished in 8.6056ms 200 application/javascript; charset=utf-8
+2025-04-21 16:14:01.4744 INFO Request finished in 142.1152ms 200 text/javascript; charset=UTF-8
+2025-04-21 16:14:01.5569 INFO Request starting HTTP/2.0 GET https://localhost:44326/swagger/v1/swagger.json  
+2025-04-21 16:14:01.5569 TRACE All hosts are allowed.
+2025-04-21 16:14:01.5569 DEBUG AuthenticationScheme: Bearer was not authenticated.
+2025-04-21 16:14:01.7009 INFO Request finished in 144.0067ms 200 application/json;charset=utf-8
+2025-04-21 16:14:45.8523 INFO Request starting HTTP/2.0 OPTIONS https://localhost:44326/login  
+2025-04-21 16:14:45.8523 TRACE All hosts are allowed.
+2025-04-21 16:14:45.8523 DEBUG The request has an origin header: 'http://localhost:4200'.
+2025-04-21 16:14:45.8523 INFO CORS policy execution successful.
+2025-04-21 16:14:45.8523 DEBUG The request is a preflight request.
+2025-04-21 16:14:45.8523 INFO Request finished in 10.7913ms 204 
+2025-04-21 16:14:45.8523 DEBUG Connection ID "18302628920798740516" disconnecting.
+2025-04-21 16:14:45.8685 INFO Request starting HTTP/2.0 POST https://localhost:44326/login application/json 48
+2025-04-21 16:14:45.8685 TRACE All hosts are allowed.
+2025-04-21 16:14:45.8685 DEBUG The request has an origin header: 'http://localhost:4200'.
+2025-04-21 16:14:45.8685 INFO CORS policy execution successful.
+2025-04-21 16:14:45.8685 DEBUG AuthenticationScheme: Bearer was not authenticated.
+2025-04-21 16:14:45.8685 DEBUG POST requests are not supported
+2025-04-21 16:14:45.9257 DEBUG 1 candidate(s) found for the request path '/login'
+2025-04-21 16:14:45.9257 DEBUG Endpoint 'FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp)' with route pattern 'login' is valid for the request path '/login'
+2025-04-21 16:14:45.9257 DEBUG Request matched endpoint 'FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp)'
+2025-04-21 16:14:45.9321 INFO Executing endpoint 'FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp)'
+2025-04-21 16:14:45.9321 DEBUG Registered model binder providers, in the following order: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider
+2025-04-21 16:14:45.9778 INFO Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginAsync(CommonLayer.Model.LoginModel) on controller FunDooNotesApp.Controllers.UsersController (FunDooNotesApp).
+2025-04-21 16:14:45.9778 DEBUG Execution plan of authorization filters (in the following order): None
+2025-04-21 16:14:45.9778 DEBUG Execution plan of resource filters (in the following order): None
+2025-04-21 16:14:45.9778 DEBUG Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)
+2025-04-21 16:14:45.9778 DEBUG Execution plan of exception filters (in the following order): None
+2025-04-21 16:14:45.9778 DEBUG Execution plan of result filters (in the following order): None
+2025-04-21 16:14:45.9778 DEBUG Executing controller factory for controller FunDooNotesApp.Controllers.UsersController (FunDooNotesApp)
+2025-04-21 16:14:46.5771 DEBUG An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-04-21 16:14:46.5963 DEBUG Executed controller factory for controller FunDooNotesApp.Controllers.UsersController (FunDooNotesApp)
+2025-04-21 16:14:46.5963 DEBUG Attempting to bind parameter 'loginModel' of type 'CommonLayer.Model.LoginModel' ...
+2025-04-21 16:14:46.6045 DEBUG Attempting to bind parameter 'loginModel' of type 'CommonLayer.Model.LoginModel' using the name '' in request data ...
+2025-04-21 16:14:46.6045 DEBUG Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-04-21 16:14:46.6045 DEBUG JSON input formatter succeeded, deserializing to type 'CommonLayer.Model.LoginModel'
+2025-04-21 16:14:46.6045 DEBUG Done attempting to bind parameter 'loginModel' of type 'CommonLayer.Model.LoginModel'.
+2025-04-21 16:14:46.6045 DEBUG Done attempting to bind parameter 'loginModel' of type 'CommonLayer.Model.LoginModel'.
+2025-04-21 16:14:46.6045 DEBUG Attempting to validate the bound parameter 'loginModel' of type 'CommonLayer.Model.LoginModel' ...
+2025-04-21 16:14:46.6274 DEBUG Done attempting to validate the bound parameter 'loginModel' of type 'CommonLayer.Model.LoginModel'.
+2025-04-21 16:14:46.6274 TRACE Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2025-04-21 16:14:46.6274 TRACE Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2025-04-21 16:14:46.6274 INFO Executing action method FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp) - Validation state: Valid
+2025-04-21 16:14:46.6331 TRACE Executing action method FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp) with arguments (CommonLayer.Model.LoginModel)
+2025-04-21 16:14:47.0816 DEBUG The index {'NoteId'} was not created on entity type 'NoteLabelEntity' as the properties are already covered by the index {'NoteId', 'LabelId'}.
+2025-04-21 16:14:47.1883 INFO Entity Framework Core 3.1.0 initialized 'FundooDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2025-04-21 16:14:47.3241 DEBUG queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<UserEntity>(
+    asyncEnumerable: new QueryingEnumerable<UserEntity>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache, 
+        null, 
+        null, 
+        Func<QueryContext, DbDataReader, ResultContext, int[], ResultCoordinator, UserEntity>, 
+        RepositoryLayer.Context.FundooDBContext, 
+        DiagnosticsLogger<Query>
+    ), 
+    cancellationToken: queryContext.CancellationToken)
+2025-04-21 16:14:47.3561 DEBUG Creating DbCommand for 'ExecuteReader'.
+2025-04-21 16:14:47.8779 DEBUG Created DbCommand for 'ExecuteReader' (520ms).
+2025-04-21 16:14:47.8882 DEBUG Opening connection to database 'FunDooNotes' on server 'LAPTOP-T927S6BH\SQLEXPRESS'.
+2025-04-21 16:14:48.4423 DEBUG Opened connection to database 'FunDooNotes' on server 'LAPTOP-T927S6BH\SQLEXPRESS'.
+2025-04-21 16:14:48.4563 DEBUG Executing DbCommand [Parameters=[@__loginModel_Email_0='?' (Size = 4000), @__EncodePasswordToBase64_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[DOB], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password]
+FROM [Users] AS [u]
+WHERE ([u].[Email] = @__loginModel_Email_0) AND ([u].[Password] = @__EncodePasswordToBase64_1)
+2025-04-21 16:14:48.5825 INFO Executed DbCommand (132ms) [Parameters=[@__loginModel_Email_0='?' (Size = 4000), @__EncodePasswordToBase64_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[DOB], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password]
+FROM [Users] AS [u]
+WHERE ([u].[Email] = @__loginModel_Email_0) AND ([u].[Password] = @__EncodePasswordToBase64_1)
+2025-04-21 16:14:48.6179 DEBUG Context 'FundooDBContext' started tracking 'UserEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-21 16:14:48.6381 DEBUG A data reader was disposed.
+2025-04-21 16:14:48.6381 DEBUG Closing connection to database 'FunDooNotes' on server 'LAPTOP-T927S6BH\SQLEXPRESS'.
+2025-04-21 16:14:48.6381 DEBUG Closed connection to database 'FunDooNotes' on server 'LAPTOP-T927S6BH\SQLEXPRESS'.
+2025-04-21 16:14:48.9104 INFO Executed action method FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2274.8999ms.
+2025-04-21 16:14:48.9104 TRACE Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2025-04-21 16:14:48.9104 TRACE Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2025-04-21 16:14:48.9144 TRACE Before executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2025-04-21 16:14:48.9144 DEBUG List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter
+2025-04-21 16:14:48.9144 DEBUG No information found on request to perform content negotiation.
+2025-04-21 16:14:48.9144 DEBUG Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-04-21 16:14:48.9144 DEBUG Attempting to select the first formatter in the output formatters list which can write the result.
+2025-04-21 16:14:48.9144 DEBUG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-21 16:14:48.9144 INFO Executing ObjectResult, writing value of type 'CommonLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-21 16:14:48.9144 TRACE After executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2025-04-21 16:14:48.9295 INFO Executed action FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp) in 2945.7747ms
+2025-04-21 16:14:48.9295 INFO Executed endpoint 'FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp)'
+2025-04-21 16:14:48.9295 DEBUG 'FundooDBContext' disposed.
+2025-04-21 16:14:48.9295 INFO Request finished in 3067.2718ms 200 application/json; charset=utf-8
+2025-04-21 16:15:31.3497 INFO Request starting HTTP/2.0 OPTIONS https://localhost:44326/login  
+2025-04-21 16:15:31.3497 TRACE All hosts are allowed.
+2025-04-21 16:15:31.3515 DEBUG The request has an origin header: 'http://localhost:4200'.
+2025-04-21 16:15:31.3515 INFO CORS policy execution successful.
+2025-04-21 16:15:31.3515 DEBUG The request is a preflight request.
+2025-04-21 16:15:31.3515 INFO Request finished in 3.8739ms 204 
+2025-04-21 16:15:31.3515 DEBUG Connection ID "18086456104325218305" disconnecting.
+2025-04-21 16:15:31.3515 INFO Request starting HTTP/2.0 POST https://localhost:44326/login application/json 48
+2025-04-21 16:15:31.3515 TRACE All hosts are allowed.
+2025-04-21 16:15:31.3515 DEBUG The request has an origin header: 'http://localhost:4200'.
+2025-04-21 16:15:31.3515 INFO CORS policy execution successful.
+2025-04-21 16:15:31.3515 DEBUG AuthenticationScheme: Bearer was not authenticated.
+2025-04-21 16:15:31.3515 DEBUG POST requests are not supported
+2025-04-21 16:15:31.3705 DEBUG 1 candidate(s) found for the request path '/login'
+2025-04-21 16:15:31.3705 DEBUG Endpoint 'FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp)' with route pattern 'login' is valid for the request path '/login'
+2025-04-21 16:15:31.3705 DEBUG Request matched endpoint 'FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp)'
+2025-04-21 16:15:31.3705 INFO Executing endpoint 'FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp)'
+2025-04-21 16:15:31.3705 INFO Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginAsync(CommonLayer.Model.LoginModel) on controller FunDooNotesApp.Controllers.UsersController (FunDooNotesApp).
+2025-04-21 16:15:31.3705 DEBUG Execution plan of authorization filters (in the following order): None
+2025-04-21 16:15:31.3705 DEBUG Execution plan of resource filters (in the following order): None
+2025-04-21 16:15:31.3705 DEBUG Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)
+2025-04-21 16:15:31.3705 DEBUG Execution plan of exception filters (in the following order): None
+2025-04-21 16:15:31.3705 DEBUG Execution plan of result filters (in the following order): None
+2025-04-21 16:15:31.3705 DEBUG Executing controller factory for controller FunDooNotesApp.Controllers.UsersController (FunDooNotesApp)
+2025-04-21 16:15:31.3705 DEBUG Executed controller factory for controller FunDooNotesApp.Controllers.UsersController (FunDooNotesApp)
+2025-04-21 16:15:31.3705 DEBUG Attempting to bind parameter 'loginModel' of type 'CommonLayer.Model.LoginModel' ...
+2025-04-21 16:15:31.3705 DEBUG Attempting to bind parameter 'loginModel' of type 'CommonLayer.Model.LoginModel' using the name '' in request data ...
+2025-04-21 16:15:31.3705 DEBUG Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-04-21 16:15:31.3705 DEBUG JSON input formatter succeeded, deserializing to type 'CommonLayer.Model.LoginModel'
+2025-04-21 16:15:31.3705 DEBUG Done attempting to bind parameter 'loginModel' of type 'CommonLayer.Model.LoginModel'.
+2025-04-21 16:15:31.3705 DEBUG Done attempting to bind parameter 'loginModel' of type 'CommonLayer.Model.LoginModel'.
+2025-04-21 16:15:31.3705 DEBUG Attempting to validate the bound parameter 'loginModel' of type 'CommonLayer.Model.LoginModel' ...
+2025-04-21 16:15:31.3705 DEBUG Done attempting to validate the bound parameter 'loginModel' of type 'CommonLayer.Model.LoginModel'.
+2025-04-21 16:15:31.3705 TRACE Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2025-04-21 16:15:31.3705 TRACE Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2025-04-21 16:15:31.3705 INFO Executing action method FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp) - Validation state: Valid
+2025-04-21 16:15:31.3705 TRACE Executing action method FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp) with arguments (CommonLayer.Model.LoginModel)
+2025-04-21 16:15:31.4084 INFO Entity Framework Core 3.1.0 initialized 'FundooDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2025-04-21 16:15:31.4084 DEBUG Creating DbCommand for 'ExecuteReader'.
+2025-04-21 16:15:31.4084 DEBUG Created DbCommand for 'ExecuteReader' (0ms).
+2025-04-21 16:15:31.4084 DEBUG Opening connection to database 'FunDooNotes' on server 'LAPTOP-T927S6BH\SQLEXPRESS'.
+2025-04-21 16:15:31.4149 DEBUG Opened connection to database 'FunDooNotes' on server 'LAPTOP-T927S6BH\SQLEXPRESS'.
+2025-04-21 16:15:31.4149 DEBUG Executing DbCommand [Parameters=[@__loginModel_Email_0='?' (Size = 4000), @__EncodePasswordToBase64_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[DOB], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password]
+FROM [Users] AS [u]
+WHERE ([u].[Email] = @__loginModel_Email_0) AND ([u].[Password] = @__EncodePasswordToBase64_1)
+2025-04-21 16:15:31.4149 INFO Executed DbCommand (14ms) [Parameters=[@__loginModel_Email_0='?' (Size = 4000), @__EncodePasswordToBase64_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[DOB], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password]
+FROM [Users] AS [u]
+WHERE ([u].[Email] = @__loginModel_Email_0) AND ([u].[Password] = @__EncodePasswordToBase64_1)
+2025-04-21 16:15:31.4310 DEBUG Context 'FundooDBContext' started tracking 'UserEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-21 16:15:31.4310 DEBUG A data reader was disposed.
+2025-04-21 16:15:31.4310 DEBUG Closing connection to database 'FunDooNotes' on server 'LAPTOP-T927S6BH\SQLEXPRESS'.
+2025-04-21 16:15:31.4310 DEBUG Closed connection to database 'FunDooNotes' on server 'LAPTOP-T927S6BH\SQLEXPRESS'.
+2025-04-21 16:15:31.4310 INFO Executed action method FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 54.1461ms.
+2025-04-21 16:15:31.4310 TRACE Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2025-04-21 16:15:31.4310 TRACE Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2025-04-21 16:15:31.4310 TRACE Before executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2025-04-21 16:15:31.4310 DEBUG List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter
+2025-04-21 16:15:31.4310 DEBUG No information found on request to perform content negotiation.
+2025-04-21 16:15:31.4310 DEBUG Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-04-21 16:15:31.4310 DEBUG Attempting to select the first formatter in the output formatters list which can write the result.
+2025-04-21 16:15:31.4310 DEBUG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-21 16:15:31.4310 INFO Executing ObjectResult, writing value of type 'CommonLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-21 16:15:31.4310 TRACE After executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2025-04-21 16:15:31.4310 INFO Executed action FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp) in 62.5198ms
+2025-04-21 16:15:31.4310 INFO Executed endpoint 'FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp)'
+2025-04-21 16:15:31.4310 DEBUG 'FundooDBContext' disposed.
+2025-04-21 16:15:31.4310 INFO Request finished in 78.922ms 200 application/json; charset=utf-8
+2025-04-21 16:15:49.6477 INFO Request starting HTTP/2.0 OPTIONS https://localhost:44326/login  
+2025-04-21 16:15:49.6486 TRACE All hosts are allowed.
+2025-04-21 16:15:49.6486 DEBUG The request has an origin header: 'http://localhost:4200'.
+2025-04-21 16:15:49.6486 INFO CORS policy execution successful.
+2025-04-21 16:15:49.6486 DEBUG The request is a preflight request.
+2025-04-21 16:15:49.6486 INFO Request finished in 5.2529ms 204 
+2025-04-21 16:15:49.6486 DEBUG Connection ID "18158513706953080870" disconnecting.
+2025-04-21 16:15:49.6486 INFO Request starting HTTP/2.0 POST https://localhost:44326/login application/json 48
+2025-04-21 16:15:49.6486 TRACE All hosts are allowed.
+2025-04-21 16:15:49.6486 DEBUG The request has an origin header: 'http://localhost:4200'.
+2025-04-21 16:15:49.6486 INFO CORS policy execution successful.
+2025-04-21 16:15:49.6486 DEBUG AuthenticationScheme: Bearer was not authenticated.
+2025-04-21 16:15:49.6486 DEBUG POST requests are not supported
+2025-04-21 16:15:49.6486 DEBUG 1 candidate(s) found for the request path '/login'
+2025-04-21 16:15:49.6486 DEBUG Endpoint 'FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp)' with route pattern 'login' is valid for the request path '/login'
+2025-04-21 16:15:49.6486 DEBUG Request matched endpoint 'FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp)'
+2025-04-21 16:15:49.6486 INFO Executing endpoint 'FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp)'
+2025-04-21 16:15:49.6486 INFO Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginAsync(CommonLayer.Model.LoginModel) on controller FunDooNotesApp.Controllers.UsersController (FunDooNotesApp).
+2025-04-21 16:15:49.6636 DEBUG Execution plan of authorization filters (in the following order): None
+2025-04-21 16:15:49.6636 DEBUG Execution plan of resource filters (in the following order): None
+2025-04-21 16:15:49.6636 DEBUG Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)
+2025-04-21 16:15:49.6636 DEBUG Execution plan of exception filters (in the following order): None
+2025-04-21 16:15:49.6636 DEBUG Execution plan of result filters (in the following order): None
+2025-04-21 16:15:49.6636 DEBUG Executing controller factory for controller FunDooNotesApp.Controllers.UsersController (FunDooNotesApp)
+2025-04-21 16:15:49.6636 DEBUG Executed controller factory for controller FunDooNotesApp.Controllers.UsersController (FunDooNotesApp)
+2025-04-21 16:15:49.6636 DEBUG Attempting to bind parameter 'loginModel' of type 'CommonLayer.Model.LoginModel' ...
+2025-04-21 16:15:49.6636 DEBUG Attempting to bind parameter 'loginModel' of type 'CommonLayer.Model.LoginModel' using the name '' in request data ...
+2025-04-21 16:15:49.6636 DEBUG Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-04-21 16:15:49.6636 DEBUG JSON input formatter succeeded, deserializing to type 'CommonLayer.Model.LoginModel'
+2025-04-21 16:15:49.6636 DEBUG Done attempting to bind parameter 'loginModel' of type 'CommonLayer.Model.LoginModel'.
+2025-04-21 16:15:49.6636 DEBUG Done attempting to bind parameter 'loginModel' of type 'CommonLayer.Model.LoginModel'.
+2025-04-21 16:15:49.6636 DEBUG Attempting to validate the bound parameter 'loginModel' of type 'CommonLayer.Model.LoginModel' ...
+2025-04-21 16:15:49.6636 DEBUG Done attempting to validate the bound parameter 'loginModel' of type 'CommonLayer.Model.LoginModel'.
+2025-04-21 16:15:49.6636 TRACE Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2025-04-21 16:15:49.6636 TRACE Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2025-04-21 16:15:49.6636 INFO Executing action method FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp) - Validation state: Valid
+2025-04-21 16:15:49.6636 TRACE Executing action method FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp) with arguments (CommonLayer.Model.LoginModel)
+2025-04-21 16:15:49.6636 INFO Entity Framework Core 3.1.0 initialized 'FundooDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2025-04-21 16:15:49.6812 DEBUG Creating DbCommand for 'ExecuteReader'.
+2025-04-21 16:15:49.6812 DEBUG Created DbCommand for 'ExecuteReader' (0ms).
+2025-04-21 16:15:49.6812 DEBUG Opening connection to database 'FunDooNotes' on server 'LAPTOP-T927S6BH\SQLEXPRESS'.
+2025-04-21 16:15:49.6812 DEBUG Opened connection to database 'FunDooNotes' on server 'LAPTOP-T927S6BH\SQLEXPRESS'.
+2025-04-21 16:15:49.6812 DEBUG Executing DbCommand [Parameters=[@__loginModel_Email_0='?' (Size = 4000), @__EncodePasswordToBase64_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[DOB], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password]
+FROM [Users] AS [u]
+WHERE ([u].[Email] = @__loginModel_Email_0) AND ([u].[Password] = @__EncodePasswordToBase64_1)
+2025-04-21 16:15:49.6812 INFO Executed DbCommand (5ms) [Parameters=[@__loginModel_Email_0='?' (Size = 4000), @__EncodePasswordToBase64_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[DOB], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password]
+FROM [Users] AS [u]
+WHERE ([u].[Email] = @__loginModel_Email_0) AND ([u].[Password] = @__EncodePasswordToBase64_1)
+2025-04-21 16:15:49.6963 DEBUG Context 'FundooDBContext' started tracking 'UserEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-21 16:15:49.6963 DEBUG A data reader was disposed.
+2025-04-21 16:15:49.6963 DEBUG Closing connection to database 'FunDooNotes' on server 'LAPTOP-T927S6BH\SQLEXPRESS'.
+2025-04-21 16:15:49.6963 DEBUG Closed connection to database 'FunDooNotes' on server 'LAPTOP-T927S6BH\SQLEXPRESS'.
+2025-04-21 16:15:49.6963 INFO Executed action method FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 27.205ms.
+2025-04-21 16:15:49.6963 TRACE Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2025-04-21 16:15:49.6963 TRACE Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2025-04-21 16:15:49.6963 TRACE Before executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2025-04-21 16:15:49.6963 DEBUG List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter
+2025-04-21 16:15:49.6963 DEBUG No information found on request to perform content negotiation.
+2025-04-21 16:15:49.6963 DEBUG Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-04-21 16:15:49.6963 DEBUG Attempting to select the first formatter in the output formatters list which can write the result.
+2025-04-21 16:15:49.6963 DEBUG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-21 16:15:49.6963 INFO Executing ObjectResult, writing value of type 'CommonLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-21 16:15:49.6963 TRACE After executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2025-04-21 16:15:49.6963 INFO Executed action FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp) in 36.3701ms
+2025-04-21 16:15:49.6963 INFO Executed endpoint 'FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp)'
+2025-04-21 16:15:49.6963 DEBUG 'FundooDBContext' disposed.
+2025-04-21 16:15:49.6963 INFO Request finished in 44.8864ms 200 application/json; charset=utf-8
+2025-04-21 16:15:58.8572 INFO Request starting HTTP/2.0 OPTIONS https://localhost:44326/login  
+2025-04-21 16:15:58.8572 TRACE All hosts are allowed.
+2025-04-21 16:15:58.8572 DEBUG The request has an origin header: 'http://localhost:4200'.
+2025-04-21 16:15:58.8572 INFO CORS policy execution successful.
+2025-04-21 16:15:58.8572 DEBUG The request is a preflight request.
+2025-04-21 16:15:58.8572 INFO Request finished in 2.4047ms 204 
+2025-04-21 16:15:58.8572 DEBUG Connection ID "18374686501951766555" disconnecting.
+2025-04-21 16:15:58.8572 INFO Request starting HTTP/2.0 POST https://localhost:44326/login application/json 48
+2025-04-21 16:15:58.8572 TRACE All hosts are allowed.
+2025-04-21 16:15:58.8572 DEBUG The request has an origin header: 'http://localhost:4200'.
+2025-04-21 16:15:58.8572 INFO CORS policy execution successful.
+2025-04-21 16:15:58.8572 DEBUG AuthenticationScheme: Bearer was not authenticated.
+2025-04-21 16:15:58.8572 DEBUG POST requests are not supported
+2025-04-21 16:15:58.8572 DEBUG 1 candidate(s) found for the request path '/login'
+2025-04-21 16:15:58.8572 DEBUG Endpoint 'FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp)' with route pattern 'login' is valid for the request path '/login'
+2025-04-21 16:15:58.8572 DEBUG Request matched endpoint 'FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp)'
+2025-04-21 16:15:58.8572 INFO Executing endpoint 'FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp)'
+2025-04-21 16:15:58.8572 INFO Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginAsync(CommonLayer.Model.LoginModel) on controller FunDooNotesApp.Controllers.UsersController (FunDooNotesApp).
+2025-04-21 16:15:58.8572 DEBUG Execution plan of authorization filters (in the following order): None
+2025-04-21 16:15:58.8572 DEBUG Execution plan of resource filters (in the following order): None
+2025-04-21 16:15:58.8572 DEBUG Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)
+2025-04-21 16:15:58.8572 DEBUG Execution plan of exception filters (in the following order): None
+2025-04-21 16:15:58.8572 DEBUG Execution plan of result filters (in the following order): None
+2025-04-21 16:15:58.8572 DEBUG Executing controller factory for controller FunDooNotesApp.Controllers.UsersController (FunDooNotesApp)
+2025-04-21 16:15:58.8572 DEBUG Executed controller factory for controller FunDooNotesApp.Controllers.UsersController (FunDooNotesApp)
+2025-04-21 16:15:58.8572 DEBUG Attempting to bind parameter 'loginModel' of type 'CommonLayer.Model.LoginModel' ...
+2025-04-21 16:15:58.8572 DEBUG Attempting to bind parameter 'loginModel' of type 'CommonLayer.Model.LoginModel' using the name '' in request data ...
+2025-04-21 16:15:58.8572 DEBUG Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-04-21 16:15:58.8673 DEBUG JSON input formatter succeeded, deserializing to type 'CommonLayer.Model.LoginModel'
+2025-04-21 16:15:58.8673 DEBUG Done attempting to bind parameter 'loginModel' of type 'CommonLayer.Model.LoginModel'.
+2025-04-21 16:15:58.8673 DEBUG Done attempting to bind parameter 'loginModel' of type 'CommonLayer.Model.LoginModel'.
+2025-04-21 16:15:58.8673 DEBUG Attempting to validate the bound parameter 'loginModel' of type 'CommonLayer.Model.LoginModel' ...
+2025-04-21 16:15:58.8673 DEBUG Done attempting to validate the bound parameter 'loginModel' of type 'CommonLayer.Model.LoginModel'.
+2025-04-21 16:15:58.8673 TRACE Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2025-04-21 16:15:58.8673 TRACE Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2025-04-21 16:15:58.8673 INFO Executing action method FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp) - Validation state: Valid
+2025-04-21 16:15:58.8673 TRACE Executing action method FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp) with arguments (CommonLayer.Model.LoginModel)
+2025-04-21 16:15:58.8673 INFO Entity Framework Core 3.1.0 initialized 'FundooDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2025-04-21 16:15:58.8673 DEBUG Creating DbCommand for 'ExecuteReader'.
+2025-04-21 16:15:58.8673 DEBUG Created DbCommand for 'ExecuteReader' (0ms).
+2025-04-21 16:15:58.8673 DEBUG Opening connection to database 'FunDooNotes' on server 'LAPTOP-T927S6BH\SQLEXPRESS'.
+2025-04-21 16:15:58.8673 DEBUG Opened connection to database 'FunDooNotes' on server 'LAPTOP-T927S6BH\SQLEXPRESS'.
+2025-04-21 16:15:58.8673 DEBUG Executing DbCommand [Parameters=[@__loginModel_Email_0='?' (Size = 4000), @__EncodePasswordToBase64_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[DOB], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password]
+FROM [Users] AS [u]
+WHERE ([u].[Email] = @__loginModel_Email_0) AND ([u].[Password] = @__EncodePasswordToBase64_1)
+2025-04-21 16:15:58.8673 INFO Executed DbCommand (6ms) [Parameters=[@__loginModel_Email_0='?' (Size = 4000), @__EncodePasswordToBase64_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[DOB], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password]
+FROM [Users] AS [u]
+WHERE ([u].[Email] = @__loginModel_Email_0) AND ([u].[Password] = @__EncodePasswordToBase64_1)
+2025-04-21 16:15:58.8673 DEBUG Context 'FundooDBContext' started tracking 'UserEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-21 16:15:58.8673 DEBUG A data reader was disposed.
+2025-04-21 16:15:58.8673 DEBUG Closing connection to database 'FunDooNotes' on server 'LAPTOP-T927S6BH\SQLEXPRESS'.
+2025-04-21 16:15:58.8673 DEBUG Closed connection to database 'FunDooNotes' on server 'LAPTOP-T927S6BH\SQLEXPRESS'.
+2025-04-21 16:15:58.8673 INFO Executed action method FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 10.6932ms.
+2025-04-21 16:15:58.8673 TRACE Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2025-04-21 16:15:58.8673 TRACE Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2025-04-21 16:15:58.8673 TRACE Before executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2025-04-21 16:15:58.8673 DEBUG List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter
+2025-04-21 16:15:58.8673 DEBUG No information found on request to perform content negotiation.
+2025-04-21 16:15:58.8673 DEBUG Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-04-21 16:15:58.8673 DEBUG Attempting to select the first formatter in the output formatters list which can write the result.
+2025-04-21 16:15:58.8673 DEBUG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-21 16:15:58.8673 INFO Executing ObjectResult, writing value of type 'CommonLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-21 16:15:58.8673 TRACE After executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2025-04-21 16:15:58.8673 INFO Executed action FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp) in 16.5459ms
+2025-04-21 16:15:58.8821 INFO Executed endpoint 'FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp)'
+2025-04-21 16:15:58.8821 DEBUG 'FundooDBContext' disposed.
+2025-04-21 16:15:58.8821 INFO Request finished in 20.817ms 200 application/json; charset=utf-8
+2025-04-21 16:16:55.1542 INFO Request starting HTTP/2.0 OPTIONS https://localhost:44326/login  
+2025-04-21 16:16:55.1542 TRACE All hosts are allowed.
+2025-04-21 16:16:55.1542 DEBUG The request has an origin header: 'http://localhost:4200'.
+2025-04-21 16:16:55.1542 INFO CORS policy execution successful.
+2025-04-21 16:16:55.1542 DEBUG The request is a preflight request.
+2025-04-21 16:16:55.1542 INFO Request finished in 1.7958ms 204 
+2025-04-21 16:16:55.1542 DEBUG Connection ID "18302628929388675092" disconnecting.
+2025-04-21 16:16:55.1542 INFO Request starting HTTP/2.0 POST https://localhost:44326/login application/json 48
+2025-04-21 16:16:55.1542 TRACE All hosts are allowed.
+2025-04-21 16:16:55.1542 DEBUG The request has an origin header: 'http://localhost:4200'.
+2025-04-21 16:16:55.1542 INFO CORS policy execution successful.
+2025-04-21 16:16:55.1645 DEBUG AuthenticationScheme: Bearer was not authenticated.
+2025-04-21 16:16:55.1645 DEBUG POST requests are not supported
+2025-04-21 16:16:55.1645 DEBUG 1 candidate(s) found for the request path '/login'
+2025-04-21 16:16:55.1645 DEBUG Endpoint 'FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp)' with route pattern 'login' is valid for the request path '/login'
+2025-04-21 16:16:55.1645 DEBUG Request matched endpoint 'FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp)'
+2025-04-21 16:16:55.1645 INFO Executing endpoint 'FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp)'
+2025-04-21 16:16:55.1645 INFO Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginAsync(CommonLayer.Model.LoginModel) on controller FunDooNotesApp.Controllers.UsersController (FunDooNotesApp).
+2025-04-21 16:16:55.1645 DEBUG Execution plan of authorization filters (in the following order): None
+2025-04-21 16:16:55.1645 DEBUG Execution plan of resource filters (in the following order): None
+2025-04-21 16:16:55.1645 DEBUG Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)
+2025-04-21 16:16:55.1645 DEBUG Execution plan of exception filters (in the following order): None
+2025-04-21 16:16:55.1645 DEBUG Execution plan of result filters (in the following order): None
+2025-04-21 16:16:55.1645 DEBUG Executing controller factory for controller FunDooNotesApp.Controllers.UsersController (FunDooNotesApp)
+2025-04-21 16:16:55.1645 DEBUG Executed controller factory for controller FunDooNotesApp.Controllers.UsersController (FunDooNotesApp)
+2025-04-21 16:16:55.1645 DEBUG Attempting to bind parameter 'loginModel' of type 'CommonLayer.Model.LoginModel' ...
+2025-04-21 16:16:55.1645 DEBUG Attempting to bind parameter 'loginModel' of type 'CommonLayer.Model.LoginModel' using the name '' in request data ...
+2025-04-21 16:16:55.1645 DEBUG Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-04-21 16:16:55.1645 DEBUG JSON input formatter succeeded, deserializing to type 'CommonLayer.Model.LoginModel'
+2025-04-21 16:16:55.1645 DEBUG Done attempting to bind parameter 'loginModel' of type 'CommonLayer.Model.LoginModel'.
+2025-04-21 16:16:55.1645 DEBUG Done attempting to bind parameter 'loginModel' of type 'CommonLayer.Model.LoginModel'.
+2025-04-21 16:16:55.1645 DEBUG Attempting to validate the bound parameter 'loginModel' of type 'CommonLayer.Model.LoginModel' ...
+2025-04-21 16:16:55.1645 DEBUG Done attempting to validate the bound parameter 'loginModel' of type 'CommonLayer.Model.LoginModel'.
+2025-04-21 16:16:55.1645 TRACE Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2025-04-21 16:16:55.1645 TRACE Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2025-04-21 16:16:55.1645 INFO Executing action method FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp) - Validation state: Valid
+2025-04-21 16:16:55.1645 TRACE Executing action method FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp) with arguments (CommonLayer.Model.LoginModel)
+2025-04-21 16:16:55.1645 INFO Entity Framework Core 3.1.0 initialized 'FundooDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2025-04-21 16:16:55.1645 DEBUG Creating DbCommand for 'ExecuteReader'.
+2025-04-21 16:16:55.1645 DEBUG Created DbCommand for 'ExecuteReader' (0ms).
+2025-04-21 16:16:55.1645 DEBUG Opening connection to database 'FunDooNotes' on server 'LAPTOP-T927S6BH\SQLEXPRESS'.
+2025-04-21 16:16:55.1645 DEBUG Opened connection to database 'FunDooNotes' on server 'LAPTOP-T927S6BH\SQLEXPRESS'.
+2025-04-21 16:16:55.1645 DEBUG Executing DbCommand [Parameters=[@__loginModel_Email_0='?' (Size = 4000), @__EncodePasswordToBase64_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[DOB], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password]
+FROM [Users] AS [u]
+WHERE ([u].[Email] = @__loginModel_Email_0) AND ([u].[Password] = @__EncodePasswordToBase64_1)
+2025-04-21 16:16:55.2045 INFO Executed DbCommand (26ms) [Parameters=[@__loginModel_Email_0='?' (Size = 4000), @__EncodePasswordToBase64_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[DOB], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password]
+FROM [Users] AS [u]
+WHERE ([u].[Email] = @__loginModel_Email_0) AND ([u].[Password] = @__EncodePasswordToBase64_1)
+2025-04-21 16:16:55.2045 DEBUG Context 'FundooDBContext' started tracking 'UserEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-21 16:16:55.2045 DEBUG A data reader was disposed.
+2025-04-21 16:16:55.2045 DEBUG Closing connection to database 'FunDooNotes' on server 'LAPTOP-T927S6BH\SQLEXPRESS'.
+2025-04-21 16:16:55.2045 DEBUG Closed connection to database 'FunDooNotes' on server 'LAPTOP-T927S6BH\SQLEXPRESS'.
+2025-04-21 16:16:55.2106 INFO Executed action method FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 39.1501ms.
+2025-04-21 16:16:55.2106 TRACE Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2025-04-21 16:16:55.2106 TRACE Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2025-04-21 16:16:55.2106 TRACE Before executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2025-04-21 16:16:55.2106 DEBUG List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter
+2025-04-21 16:16:55.2106 DEBUG No information found on request to perform content negotiation.
+2025-04-21 16:16:55.2106 DEBUG Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-04-21 16:16:55.2106 DEBUG Attempting to select the first formatter in the output formatters list which can write the result.
+2025-04-21 16:16:55.2106 DEBUG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-21 16:16:55.2106 INFO Executing ObjectResult, writing value of type 'CommonLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-21 16:16:55.2106 TRACE After executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2025-04-21 16:16:55.2106 INFO Executed action FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp) in 47.3022ms
+2025-04-21 16:16:55.2106 INFO Executed endpoint 'FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp)'
+2025-04-21 16:16:55.2106 DEBUG 'FundooDBContext' disposed.
+2025-04-21 16:16:55.2106 INFO Request finished in 56.3293ms 200 application/json; charset=utf-8
+2025-04-21 16:18:04.0944 INFO Request starting HTTP/2.0 OPTIONS https://localhost:44326/login  
+2025-04-21 16:18:04.0944 TRACE All hosts are allowed.
+2025-04-21 16:18:04.0944 DEBUG The request has an origin header: 'http://localhost:4200'.
+2025-04-21 16:18:04.0944 INFO CORS policy execution successful.
+2025-04-21 16:18:04.0944 DEBUG The request is a preflight request.
+2025-04-21 16:18:04.0944 INFO Request finished in 1.7419ms 204 
+2025-04-21 16:18:04.0944 DEBUG Connection ID "18302628920798740520" disconnecting.
+2025-04-21 16:18:04.0944 INFO Request starting HTTP/2.0 POST https://localhost:44326/login application/json 57
+2025-04-21 16:18:04.0944 TRACE All hosts are allowed.
+2025-04-21 16:18:04.0944 DEBUG The request has an origin header: 'http://localhost:4200'.
+2025-04-21 16:18:04.0944 INFO CORS policy execution successful.
+2025-04-21 16:18:04.0944 DEBUG AuthenticationScheme: Bearer was not authenticated.
+2025-04-21 16:18:04.0944 DEBUG POST requests are not supported
+2025-04-21 16:18:04.0944 DEBUG 1 candidate(s) found for the request path '/login'
+2025-04-21 16:18:04.0944 DEBUG Endpoint 'FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp)' with route pattern 'login' is valid for the request path '/login'
+2025-04-21 16:18:04.0944 DEBUG Request matched endpoint 'FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp)'
+2025-04-21 16:18:04.0944 INFO Executing endpoint 'FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp)'
+2025-04-21 16:18:04.0944 INFO Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginAsync(CommonLayer.Model.LoginModel) on controller FunDooNotesApp.Controllers.UsersController (FunDooNotesApp).
+2025-04-21 16:18:04.0944 DEBUG Execution plan of authorization filters (in the following order): None
+2025-04-21 16:18:04.0944 DEBUG Execution plan of resource filters (in the following order): None
+2025-04-21 16:18:04.1017 DEBUG Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)
+2025-04-21 16:18:04.1017 DEBUG Execution plan of exception filters (in the following order): None
+2025-04-21 16:18:04.1017 DEBUG Execution plan of result filters (in the following order): None
+2025-04-21 16:18:04.1017 DEBUG Executing controller factory for controller FunDooNotesApp.Controllers.UsersController (FunDooNotesApp)
+2025-04-21 16:18:04.1017 DEBUG Executed controller factory for controller FunDooNotesApp.Controllers.UsersController (FunDooNotesApp)
+2025-04-21 16:18:04.1017 DEBUG Attempting to bind parameter 'loginModel' of type 'CommonLayer.Model.LoginModel' ...
+2025-04-21 16:18:04.1017 DEBUG Attempting to bind parameter 'loginModel' of type 'CommonLayer.Model.LoginModel' using the name '' in request data ...
+2025-04-21 16:18:04.1017 DEBUG Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-04-21 16:18:04.1017 DEBUG JSON input formatter succeeded, deserializing to type 'CommonLayer.Model.LoginModel'
+2025-04-21 16:18:04.1017 DEBUG Done attempting to bind parameter 'loginModel' of type 'CommonLayer.Model.LoginModel'.
+2025-04-21 16:18:04.1017 DEBUG Done attempting to bind parameter 'loginModel' of type 'CommonLayer.Model.LoginModel'.
+2025-04-21 16:18:04.1017 DEBUG Attempting to validate the bound parameter 'loginModel' of type 'CommonLayer.Model.LoginModel' ...
+2025-04-21 16:18:04.1017 DEBUG Done attempting to validate the bound parameter 'loginModel' of type 'CommonLayer.Model.LoginModel'.
+2025-04-21 16:18:04.1017 TRACE Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2025-04-21 16:18:04.1017 TRACE Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2025-04-21 16:18:04.1017 INFO Executing action method FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp) - Validation state: Valid
+2025-04-21 16:18:04.1017 TRACE Executing action method FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp) with arguments (CommonLayer.Model.LoginModel)
+2025-04-21 16:18:04.1017 INFO Entity Framework Core 3.1.0 initialized 'FundooDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2025-04-21 16:18:04.1017 DEBUG Creating DbCommand for 'ExecuteReader'.
+2025-04-21 16:18:04.1017 DEBUG Created DbCommand for 'ExecuteReader' (0ms).
+2025-04-21 16:18:04.1017 DEBUG Opening connection to database 'FunDooNotes' on server 'LAPTOP-T927S6BH\SQLEXPRESS'.
+2025-04-21 16:18:04.1017 DEBUG Opened connection to database 'FunDooNotes' on server 'LAPTOP-T927S6BH\SQLEXPRESS'.
+2025-04-21 16:18:04.1017 DEBUG Executing DbCommand [Parameters=[@__loginModel_Email_0='?' (Size = 4000), @__EncodePasswordToBase64_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[DOB], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password]
+FROM [Users] AS [u]
+WHERE ([u].[Email] = @__loginModel_Email_0) AND ([u].[Password] = @__EncodePasswordToBase64_1)
+2025-04-21 16:18:04.1232 INFO Executed DbCommand (13ms) [Parameters=[@__loginModel_Email_0='?' (Size = 4000), @__EncodePasswordToBase64_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[DOB], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password]
+FROM [Users] AS [u]
+WHERE ([u].[Email] = @__loginModel_Email_0) AND ([u].[Password] = @__EncodePasswordToBase64_1)
+2025-04-21 16:18:04.1232 DEBUG Context 'FundooDBContext' started tracking 'UserEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-21 16:18:04.1232 DEBUG A data reader was disposed.
+2025-04-21 16:18:04.1232 DEBUG Closing connection to database 'FunDooNotes' on server 'LAPTOP-T927S6BH\SQLEXPRESS'.
+2025-04-21 16:18:04.1232 DEBUG Closed connection to database 'FunDooNotes' on server 'LAPTOP-T927S6BH\SQLEXPRESS'.
+2025-04-21 16:18:04.1232 INFO Executed action method FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 22.1193ms.
+2025-04-21 16:18:04.1232 TRACE Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2025-04-21 16:18:04.1232 TRACE Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2025-04-21 16:18:04.1232 TRACE Before executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2025-04-21 16:18:04.1232 DEBUG List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter
+2025-04-21 16:18:04.1232 DEBUG No information found on request to perform content negotiation.
+2025-04-21 16:18:04.1232 DEBUG Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-04-21 16:18:04.1232 DEBUG Attempting to select the first formatter in the output formatters list which can write the result.
+2025-04-21 16:18:04.1232 DEBUG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-21 16:18:04.1232 INFO Executing ObjectResult, writing value of type 'CommonLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-21 16:18:04.1232 TRACE After executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2025-04-21 16:18:04.1232 INFO Executed action FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp) in 28.7905ms
+2025-04-21 16:18:04.1232 INFO Executed endpoint 'FunDooNotesApp.Controllers.UsersController.LoginAsync (FunDooNotesApp)'
+2025-04-21 16:18:04.1232 DEBUG 'FundooDBContext' disposed.
+2025-04-21 16:18:04.1232 INFO Request finished in 33.409ms 200 application/json; charset=utf-8
+2025-04-21 16:54:02.5218 DEBUG Disconnect: guest@localhost:5672/
+2025-04-21 16:54:02.5419 DEBUG Disconnected: guest@localhost:5672/
+2025-04-21 16:54:03.3344 DEBUG Closing model: 1 guest@localhost:5672/

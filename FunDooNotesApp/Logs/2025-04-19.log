@@ -1,0 +1,41 @@
+2025-04-19 11:50:30.1728 DEBUG Hosting starting
+2025-04-19 11:50:30.2658 INFO User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-19 11:50:31.0173 DEBUG Reading data from file 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys\key-5197d4a9-0d4c-42a7-8010-94bf83067101.xml'.
+2025-04-19 11:50:31.0430 DEBUG Reading data from file 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys\key-6d8de507-ea8a-4bec-95d6-eb4cdb31ff29.xml'.
+2025-04-19 11:50:31.0773 DEBUG Found key {5197d4a9-0d4c-42a7-8010-94bf83067101}.
+2025-04-19 11:50:31.0773 DEBUG Found key {6d8de507-ea8a-4bec-95d6-eb4cdb31ff29}.
+2025-04-19 11:50:31.0894 DEBUG Considering key {6d8de507-ea8a-4bec-95d6-eb4cdb31ff29} with expiration date 2025-06-25 18:18:06Z as default key.
+2025-04-19 11:50:31.1572 DEBUG Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-04-19 11:50:31.1685 DEBUG Decrypting secret element using Windows DPAPI.
+2025-04-19 11:50:31.1685 DEBUG Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-04-19 11:50:31.1685 DEBUG Opening CNG algorithm 'AES' from provider '(null)' with chaining mode CBC.
+2025-04-19 11:50:31.1685 DEBUG Opening CNG algorithm 'SHA256' from provider '(null)' with HMAC.
+2025-04-19 11:50:31.1816 DEBUG Using key {6d8de507-ea8a-4bec-95d6-eb4cdb31ff29} as the default key.
+2025-04-19 11:50:31.1816 DEBUG Key ring with default key {6d8de507-ea8a-4bec-95d6-eb4cdb31ff29} was loaded during application startup.
+2025-04-19 11:50:31.1816 DEBUG Starting host: rabbitmq://localhost/
+2025-04-19 11:50:31.2525 DEBUG Connect: guest@localhost:5672/
+2025-04-19 11:50:31.6723 DEBUG Connected: guest@localhost:5672/ (address: amqp://localhost:5672, local: 55002)
+2025-04-19 11:50:31.9819 DEBUG Loaded hosting startup assembly FunDooNotesApp
+2025-04-19 11:50:31.9819 DEBUG Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-04-19 11:50:31.9819 DEBUG Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-04-19 11:50:31.9819 INFO Application started. Press Ctrl+C to shut down.
+2025-04-19 11:50:31.9819 INFO Hosting environment: Development
+2025-04-19 11:50:31.9819 INFO Content root path: E:\BL\Training\Project\Backend\FunDooNotesApp\FunDooNotesApp
+2025-04-19 11:50:31.9819 DEBUG Hosting started
+2025-04-19 11:50:32.0348 INFO Request starting HTTP/2.0 GET https://localhost:44326/swagger/index.html  
+2025-04-19 11:50:32.7075 DEBUG Wildcard detected, all requests with hosts will be allowed.
+2025-04-19 11:50:32.7075 TRACE All hosts are allowed.
+2025-04-19 11:50:33.5783 DEBUG AuthenticationScheme: Bearer was not authenticated.
+2025-04-19 11:50:33.9027 DEBUG Response markup is scheduled to include Browser Link script injection.
+2025-04-19 11:50:33.9027 DEBUG Response markup is scheduled to include browser refresh script injection.
+2025-04-19 11:50:33.9491 DEBUG Response markup was updated to include Browser Link script injection.
+2025-04-19 11:50:33.9491 DEBUG Response markup was updated to include browser refresh script injection.
+2025-04-19 11:50:33.9491 INFO Request finished in 1919.391ms 200 text/html;charset=utf-8
+2025-04-19 11:50:33.9728 INFO Request starting HTTP/2.0 GET https://localhost:44326/_framework/aspnetcore-browser-refresh.js  
+2025-04-19 11:50:33.9910 INFO Request finished in 18.2213ms 200 application/javascript; charset=utf-8
+2025-04-19 11:50:33.9945 INFO Request starting HTTP/2.0 GET https://localhost:44326/_vs/browserLink  
+2025-04-19 11:50:34.0786 INFO Request finished in 84.0921ms 200 text/javascript; charset=UTF-8
+2025-04-19 11:50:34.2015 INFO Request starting HTTP/2.0 GET https://localhost:44326/swagger/v1/swagger.json  
+2025-04-19 11:50:34.2015 TRACE All hosts are allowed.
+2025-04-19 11:50:34.2015 DEBUG AuthenticationScheme: Bearer was not authenticated.
+2025-04-19 11:50:34.3352 INFO Request finished in 133.6649ms 200 application/json;charset=utf-8

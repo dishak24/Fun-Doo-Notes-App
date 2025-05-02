@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using RepositoryLayer.Interfaces;
+using System.Threading.Tasks;
 
 namespace ManagerLayer.Services
 {
@@ -21,87 +22,87 @@ namespace ManagerLayer.Services
         }
 
         //Register User
-        public UserEntity Register(RegisterModel model)
+        public async Task<UserEntity> Register(RegisterModel model)
         {
-            return userRepo.Register(model);
+            return await userRepo.Register(model);
         }
 
         //Checking email exist or not. Duplicate email not allowed
-        public bool CheckEmailExist(string email)
+        public async Task<bool> CheckEmailExist(string email)
         {
-            return userRepo.CheckEmailExist(email);
+            return await userRepo.CheckEmailExist(email);
         }
 
         //Login User
-        public string Login(LoginModel loginModel)
+        public async Task<string> Login(LoginModel loginModel)
         {
-            return userRepo.Login(loginModel);
+            return await userRepo.Login(loginModel);
         }
 
         //Forgot Password
-        public ForgotPasswordModel ForgotPassword(string email)
+        public async Task<ForgotPasswordModel> ForgotPassword(string email)
         {
-            return userRepo.ForgotPassword(email);
+            return await userRepo.ForgotPassword(email);
         }
 
         //Reset Password
-        public bool ResetPassword(string email, ResetPasswordModel reset)
+        public async Task<bool> ResetPassword(string email, ResetPasswordModel reset)
         {
-            return userRepo.ResetPassword(email, reset);
+            return await userRepo.ResetPassword(email, reset);
         }
 
         //Get all users
-        public List<UserEntity> GetAllUsers()
+        public async Task<List<UserEntity>> GetAllUsers()
         {
-            return userRepo.GetAllUsers();
+            return await userRepo.GetAllUsers();
         }
 
         //Find a user by ID
-        public UserEntity GetUserById(int userId)
+        public async Task<UserEntity> GetUserById(int userId)
         {
-            return userRepo.GetUserById(userId);
+            return await userRepo.GetUserById(userId);
         }
 
         //Get users whose name starts with 'A'
-        public List<UserEntity> GetUsersNameStartsWithLetter(string letter)
+        public async Task<List<UserEntity>> GetUsersNameStartsWithLetter(string letter)
         {
-            return userRepo.GetUsersNameStartsWithLetter(letter);
+            return await userRepo.GetUsersNameStartsWithLetter(letter);
         }
 
         //Count the total number of users
-        public int CountUsers()
+        public async Task<int> CountUsers()
         {
-            return userRepo.CountUsers();
+            return await userRepo.CountUsers();
         }
 
         //Get users ordered by name (ascending)
-        public List<UserEntity> GetUsersByNamesASC()
+        public async Task<List<UserEntity>> GetUsersByNamesASC()
         {
-            return userRepo.GetUsersByNamesASC();
+            return await userRepo.GetUsersByNamesASC();
         }
 
         //Get users ordered by name (descending)
-        public List<UserEntity> GetUsersByNamesDESC()
+        public async Task<List<UserEntity>> GetUsersByNamesDESC()
         {
-            return userRepo.GetUsersByNamesDESC();
+            return await userRepo.GetUsersByNamesDESC();
         }
 
         //Get the average age of users
-        public double GetUsersAverageAge()
+        public async Task<double> GetUsersAverageAge()
         {
-            return userRepo.GetUsersAverageAge();
+            return await userRepo.GetUsersAverageAge();
         }
 
         //Get the youngest user age
-        public int GetYoungestUserAge()
+        public async Task<int> GetYoungestUserAge()
         {
-            return userRepo.GetYoungestUserAge();
+            return await userRepo.GetYoungestUserAge();
         }
 
         //Get the oldest user age
-        public int GetOldestUserAge()
+        public async Task<int> GetOldestUserAge()
         {
-            return userRepo.GetOldestUserAge();
+            return await userRepo.GetOldestUserAge();
         }
     }
 }

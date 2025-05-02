@@ -132,14 +132,26 @@ namespace FunDooNotesApp
             });
 
             //For applying Session - To store users data. 
-            services.AddSession(x =>
+            /*services.AddSession(x =>
             {
                 x.IdleTimeout = TimeSpan.FromMinutes(1);
                 x.Cookie.HttpOnly = true;
                 x.Cookie.IsEssential = true;
-            });
+            });*/
 
             services.AddMassTransitHostedService();
+
+            // Named Policy
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: "AllowOrigin",
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:4200")
+                                            .AllowAnyHeader()
+                                            .AllowAnyMethod();
+                    });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -150,9 +162,14 @@ namespace FunDooNotesApp
                 app.UseDeveloperExceptionPage();
             }
 
-            //authentication must be on top
-            app.UseAuthentication();
+            //On top -CORS
+            app.UseCors("AllowOrigin");
 
+            //authentication must be on top
+            app.UseAuthentication();  // <- MUST be before Authorization
+            app.UseAuthorization();
+
+            
             app.UseHttpsRedirection();
 
             // This middleware serves generated Swagger document as a JSON endpoint
@@ -165,7 +182,7 @@ namespace FunDooNotesApp
             });
 
             // Enable session middleware
-            app.UseSession();
+            //app.UseSession();
 
             app.UseRouting();
 

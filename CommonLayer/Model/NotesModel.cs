@@ -8,8 +8,9 @@ namespace CommonLayer.Model
 {
     public class NotesModel
     {
-        [Required(ErrorMessage = "Title is required !!")]
+        //[Required(ErrorMessage = "Title is required !!")]
         public string Title { get; set; }
         public string Description { get; set; }
+        public string Colour { get; set; }
     }
 }

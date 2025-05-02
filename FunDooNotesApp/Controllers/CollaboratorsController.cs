@@ -1,5 +1,6 @@
 ﻿using CommonLayer.Model;
 using ManagerLayer.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RepositoryLayer.Entity;
 using RepositoryLayer.Migrations;
@@ -8,8 +9,9 @@ using System.Collections.Generic;
 
 namespace FunDooNotesApp.Controllers
 {
-    [Route("api/[controller]")]
+    /* [Route("api/[controller]")]*/
     [ApiController]
+    [Authorize]
     public class CollaboratorsController : ControllerBase
     {
         private readonly ICollaboratorsManager collaboratorsManager;
@@ -20,13 +22,14 @@ namespace FunDooNotesApp.Controllers
 
         //Add Collaborator to Note
         [HttpPost]
-        [Route("AddCollaborator")]
-        public IActionResult AddCollaborator(int NoteId, string Email)
+        [Route("addCollaborator/{noteId}")]
+        [Authorize]
+        public IActionResult AddCollaborator([FromRoute]int NoteId, [FromBody]CollaboratorModel model)
         {
             try
             {
                 int UserId = int.Parse(User.FindFirst("UserId").Value);
-                var result = collaboratorsManager.AddCollaborator(NoteId, UserId, Email);
+                var result = collaboratorsManager.AddCollaborator(NoteId, UserId, model.Email);
 
                 if (result != null)
                 {
@@ -42,7 +45,7 @@ namespace FunDooNotesApp.Controllers
                 {
                     return BadRequest(new ResponseModel<CollaboratorsEntity>
                     {
-                        Success = true,
+                        Success = false,
                         Message = "Adding Collaborator Failed !!!!!!",
                         Data = result
 
@@ -80,7 +83,7 @@ namespace FunDooNotesApp.Controllers
                 {
                     return BadRequest(new ResponseModel<List<CollaboratorsEntity>>
                     {
-                        Success = true,
+                        Success = false,
                         Message = " Failed to Get All Collaborator!!!!!!",
                         Data = result
 
@@ -119,7 +122,7 @@ namespace FunDooNotesApp.Controllers
                 {
                     return BadRequest(new ResponseModel<bool>
                     {
-                        Success = true,
+                        Success = false,
                         Message = "Failed to Remove Collaborator !!!!!!",
                         Data = result
 

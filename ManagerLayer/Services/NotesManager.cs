@@ -43,9 +43,9 @@ namespace ManagerLayer.Services
         }
 
         //Fetch Notes using title
-        public List<NotesEntity> GetNotesByTitle(string title)
+        public List<NotesEntity> GetNotesByTitleOrDescription(string searchText)
         {
-            return notesRepo.GetNotesByTitle(title);
+            return notesRepo.GetNotesByTitleOrDescription(searchText);
         }
 
         //Return Count of notes a user has

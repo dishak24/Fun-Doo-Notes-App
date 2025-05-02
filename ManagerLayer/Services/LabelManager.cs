@@ -28,6 +28,18 @@ namespace ManagerLayer.Services
             return await labelRepo.GetLabelsAsync(userId);
         }
 
+        //update label
+        public async Task<LabelEntity> UpdateLabelAsync(int userId, int labelId, string newLabelName)
+        {
+            return await labelRepo.UpdateLabelAsync(userId, labelId, newLabelName);
+        }
+
+        //delete label
+        public async Task<bool> DeleteLabelAsync(int userId, int labelId)
+        {
+            return await labelRepo.DeleteLabelAsync(userId, labelId);
+        }
+
         // Assign Label to a Note
         public async Task<NoteLabelEntity> AssignLableAsync(int NoteId, int lableId)
         {
@@ -38,5 +50,7 @@ namespace ManagerLayer.Services
         {
             return await labelRepo.RemoveLabelFromNoteAsync(noteId, labelId);
         }
+
+        
     }
 }

@@ -104,7 +104,7 @@ namespace RepositoryLayer.Migrations
                     b.Property<bool>("IsTrashed")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("Remainder")
+                    b.Property<DateTime?>("Remainder")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Title")
@@ -153,7 +153,7 @@ namespace RepositoryLayer.Migrations
             modelBuilder.Entity("RepositoryLayer.Entity.CollaboratorsEntity", b =>
                 {
                     b.HasOne("RepositoryLayer.Entity.NotesEntity", "CollaborateNote")
-                        .WithMany()
+                        .WithMany("Collaborators")
                         .HasForeignKey("NoteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -179,13 +179,13 @@ namespace RepositoryLayer.Migrations
                     b.HasOne("RepositoryLayer.Entity.LabelEntity", "Label")
                         .WithMany("NoteLabels")
                         .HasForeignKey("LabelId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("RepositoryLayer.Entity.NotesEntity", "Note")
                         .WithMany("NoteLabels")
                         .HasForeignKey("NoteId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 

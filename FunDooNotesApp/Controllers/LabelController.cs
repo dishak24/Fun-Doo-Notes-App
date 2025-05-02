@@ -1,6 +1,9 @@
 ﻿using CommonLayer.Model;
 using ManagerLayer.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using RepositoryLayer.Context;
 using RepositoryLayer.Entity;
 using RepositoryLayer.Migrations;
 using System;
@@ -8,20 +11,24 @@ using System.Threading.Tasks;
 
 namespace FunDooNotesApp.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    //[Route("api/[controller]")]
+    //[ApiController]
+    [Authorize]
     public class LabelController : ControllerBase
     {
         private readonly ILabelManager labelManager;
-        public LabelController(ILabelManager labelManager)
+        private readonly FundooDBContext context;
+        public LabelController(ILabelManager labelManager, FundooDBContext context)
         {
             this.labelManager = labelManager;
+            this.context = context;
         }
 
         // Create a Label
         [HttpPost]
-        [Route("CreateLabel")]
-        public async Task<IActionResult> CreateLabel(CreateLabelModel model)
+        [Route("createLabel")]
+        [Authorize]
+        public async Task<IActionResult> CreateLabel([FromBody]CreateLabelModel model)
         {
             try
             {
@@ -40,7 +47,8 @@ namespace FunDooNotesApp.Controllers
 
         // Get All Labels of Users ---not from notes
         [HttpGet()]
-        [Route("GetAllLabels")]
+        [Route("getAllLabels")]
+        [Authorize]
         public async Task<IActionResult> GetLabels()
         {
             try
@@ -74,30 +82,34 @@ namespace FunDooNotesApp.Controllers
 
         // Assign Label to a Note
         [HttpPost]
-        [Route("AssignLabel")]
-        public async Task<IActionResult> AssignLable(AssignLabelModel model)
+        [Route("assignLabel")]
+        [Authorize]
+        public async Task<IActionResult> AssignLable([FromBody]AssignLabelModel model)
         {
             try
             {
                 var result = await labelManager.AssignLableAsync(model.NoteId, model.LabelId);
-                if ( result != null)
+                if (result != null)
                 {
-                    return Ok(new ResponseModel<NoteLabelEntity>
+                    var note = await context.Notes
+                                             .Include(n => n.NoteLabels)
+                                             .ThenInclude(nl => nl.Label)
+                                             .FirstOrDefaultAsync(n => n.NotesId == model.NoteId);
+
+                    return Ok(new ResponseModel<NotesEntity>
                     {
                         Success = true,
-                        Message = "Label Assign to Note successfully.",
-                        Data = result
-
+                        Message = "Label assigned to note.",
+                        Data = note
                     });
                 }
                 else
                 {
-                    return BadRequest(new ResponseModel<NoteLabelEntity>
+                    return BadRequest(new ResponseModel<NotesEntity>
                     {
                         Success = false,
-                        Message = "Failed to Assign Label !!!!!",
-                        Data = result
-
+                        Message = "Failed to assign label to note.",
+                        Data = null
                     });
                 }
             }
@@ -108,9 +120,56 @@ namespace FunDooNotesApp.Controllers
         }
 
 
+        //update label
+        [HttpPut]
+        [Route("updateLabel/{labelId}")]
+        [Authorize]
+        public async Task<IActionResult> UpdateLabel(int labelId, [FromBody] CreateLabelModel model)
+        {
+            try
+            {
+                var userId = int.Parse(User.FindFirst("UserId").Value);
+                var updatedLabel = await labelManager.UpdateLabelAsync(userId, labelId, model.LabelName);
+                if (updatedLabel != null)
+                {
+                    return Ok(updatedLabel);
+                }
+                return NotFound("Label not found.");
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        //delete label
+        [HttpDelete]
+        [Route("deleteLabel/{labelId}")]
+        [Authorize]
+        public async Task<IActionResult> DeleteLabel(int labelId)
+        {
+            try
+            {
+                var userId = int.Parse(User.FindFirst("UserId").Value);
+                var success = await labelManager.DeleteLabelAsync(userId, labelId);
+                if (success)
+                {
+                    return Ok(new { message = "Label deleted successfully" });
+                }
+                return NotFound("Label not found.");
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+
+
         // Assign Label to a Note
         [HttpDelete]
-        [Route("RemoveLableFromNote/{LabelId}")]
+        [Route("removeLableFromNote/{LabelId}")]
+        [Authorize]
         public async Task<IActionResult> RemoveLabel(int noteId, int LabelId)
         {
             try
@@ -143,9 +202,58 @@ namespace FunDooNotesApp.Controllers
             }
 
         }
+
+        
+        //Practice code only. Not the part of FunDoo notes.
+        //To convert Timezone
+               
+        [HttpGet]
+        [Route("ConvertTimeZone")]
+        public IActionResult ConvertTimeZone( string AnotherZone )
+        {
                 
-            
+             try
+             {
+                    
+                var IndiaZone = TimeZoneInfo.FindSystemTimeZoneById("India Standard Time");
+                var OtherZone = TimeZoneInfo.FindSystemTimeZoneById(AnotherZone);
+                                        
+                var Time = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, IndiaZone);
+
+                var UTCTime = TimeZoneInfo.ConvertTimeToUtc(Time, IndiaZone);
+                var Result = TimeZoneInfo.ConvertTimeFromUtc(UTCTime, OtherZone);
+                   
+                if(Result !=null )
+                {
+                     return Ok(new ResponseModel<DateTime>
+                     {
+                         Success = true,
+                         Message = "Time zone Converted successfully.",
+                         Data = Result
+                     });
+                        
+                }
+                else
+                {
+                    return BadRequest(new ResponseModel<string>
+                    {
+                        Success = false,
+                        Message = "Conversion Failed !!!!.",
+
+
+                    });
+                }
+                        
+             }
+             catch(Exception e)
+             {
+                throw e;   
+             }
+        }
     }
+
+
+    
 
 
 }
